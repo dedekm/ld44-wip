@@ -1,23 +1,15 @@
-Follower = require './game_objects/follower.coffee'
+Chat = require './game_objects/chat.coffee'
 
 WELCOME_TEXT = 'What am I going to do today?'
-TEXT_OPTIONS =
-  fontSize: '12px'
 
 module.exports = ->
-  @linesCount = 0
+  @chat = new Chat(@)
 
-  @addChatLine = (text) ->
-    follower = new Follower(@)
-    message = "#{follower.name}: #{follower.react(text)}"
-    @add.text(0, @linesCount * 16, message, TEXT_OPTIONS)
-    @linesCount++
-
-  @inputLine = @add.text(0, 240 - 32, '', TEXT_OPTIONS)
+  @inputLine = @add.text(0, 240 - 32, '', @default_text_options)
   @changeInputLine = (text) ->
     @inputLine.text = ">> #{text}"
 
-  @responseLine = @add.text(0, 240 - 16, WELCOME_TEXT, TEXT_OPTIONS)
+  @responseLine = @add.text(0, 240 - 16, WELCOME_TEXT, @default_text_options)
   @changeResponseLine = (text) ->
     @responseLine.text = text
 
@@ -50,7 +42,7 @@ module.exports = ->
     @scene.changeInputLine(@value)
     if inputValid
       @scene.changeResponseLine('...')
-      @scene.addChatLine(response)
+      @scene.chat.addLine(response)
     else
       @scene.changeResponseLine(response)
 
