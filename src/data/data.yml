@@ -1,8 +1,10 @@
 actions:
   sleep:
-    response: OK
+    response: boring
   kick:
-    response: Au!
+    response:
+      - defensive
+      - hot
 
 items:
   pillow:
@@ -11,3 +13,15 @@ items:
         response: Num
       kick:
         response: Puff
+
+chat:
+  reactions:
+    boring:
+      - This is boring!
+      - I'm sleepy...
+      - Booring >:(
+    hot:
+      - This is hot!! <3
+      - I want more!!!
+    defensive:
+      - Uff, you shouldn't do this.
