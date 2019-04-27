@@ -4,6 +4,7 @@ update = require './update.coffee'
 
 config =
   type: Phaser.AUTO
+  parent: 'phaser-wrapper'
   width: 320
   height: 240
   zoom: 2
