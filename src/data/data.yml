@@ -1,0 +1,13 @@
+actions:
+  sleep:
+    response: OK
+  kick:
+    response: Au!
+
+items:
+  pillow:
+    actions:
+      eat:
+        response: Num
+      kick:
+        response: Puff
