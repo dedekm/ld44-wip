@@ -3,7 +3,7 @@ actions:
     undefined:
       default: cute=2
       lonely_people: hot,cheering,Dance=10
-      tech: boring=-10
+      tech,gamers: boring=-10
     samba, tango:
       default: cute=2
       lonely_people: hot,Dance=15
