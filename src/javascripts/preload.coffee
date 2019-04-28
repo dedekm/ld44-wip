@@ -1,4 +1,5 @@
 module.exports = ->
+  @game.three = {}
   @default_text_options =
     fontSize: '12px'
 
