@@ -1,39 +1,33 @@
 actions:
-
   do:
-    squad:
+    squat:
       horny: hot,cheering,admire=15
       life: hot,cheering,admire=20
       intel,tech,game: bored=-15
       default: bored=-5
-    pirouette, backflip:
+    pirouette,backflip:
       life: cheering,admire,interested=20
       horny: admire=8
-    forward_split, middle_split:
+    forward_split,middle_split:
       life,horny: cheering,admire,interested=20
       default: bored=-10
-    stupid_thing:
+    stupid_thing,stupid_things:
       lone,bored: happy,laughing,cheering=20
       game: happy,laughing=5
-      rel,news,life: deffensive=-10
-      default: laughing,bored=1
-    stupid_things:
-      lone,bored: happy,laughing,cheering=20
-      game: happy,laughing=5
-      rel,news,life: deffensive=-10
+      rel,news,life: defensive=-10
       default: laughing,bored=1
     something:
       default: cheering=1
   make:
     funny_face:
-      horny,rel,news,life,itel,tech: deffensive,weird=-8
+      horny,rel,news,life,intel,tech: defensive,weird=-8
       lone,bored: laughing=15
       default: laughing=3
     sad_face:
       emo: sad=30
       default: sad,laughting=-3
   jump:
-    undefined, off_bed, on_bed:
+    undefined,off_bed,on_bed:
       lone,bored,horny: laughing,cheering=5
       game,tech,intel,news: bored=-15
       emo: happy=10
@@ -41,64 +35,65 @@ actions:
   shit:
     undefined:
       perv: happy,interested,cheering,bidding,hot=200
-      horny: interested, deffensive=10
+      horny: interested,defensive=10
       bored: laughing=30
       rel,intel: disgust,weird,scared=-100
-      default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
-    and_piss:
-      perv: happy,interested,cheering,bidding,hot=300
-      horny: interested, deffensive,hot=30
-      rel,intel: disgust,weird,scared=-150
-      default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
+      default: disgust,weird,laughing=-15 # random +-
     on_keyboard:
       perv: happy,interested,cheering,bidding,hot=300
-      horny: interested, deffensive,hot=30
+      horny: interested,defensive,hot=30
       game,tech: disgust,scared=-40
       rel,intel: disgust,weird,scared=-150
       default: disgust,weird,laughing=-15
+  piss:
+    undefined:
+      perv: happy,interested,cheering,bidding,hot=300
+      horny: interested,defensive,hot=30
+      rel,intel: disgust,weird,scared=-150
+      default: disgust,weird,laughing=-15 # random +-
   be:
-    naughty, obscene:
+    naughty,obscene:
       horny,perv: hot=40
-      intel,news,rel: deffensive=-40
+      intel,news,rel: defensive=-40
       default: laughing,bored=3
     myself:
-      #easteregg???
+      # easteregg???
   strip:
     undefined:
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
-      rel,intel: disgust,deffensive=-30
+      rel,intel: disgust,defensive=-30
       news: bored=-10
       default: interested=15
   take:
-    off_t-shirt, off_tshirt, off_trousers, off_skirt, off_tights, off_g-string, off_gstring:
+    off_t-shirt,off_tshirt,off_trousers,off_skirt,off_tights,off_g-string,off_gstring:
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=20
-      rel,intel: disgust,deffensive=-20
+      rel,intel: disgust,defensive=-20
       news: bored=-10
       default: interested=10
-    off_coat, off_cap, off_hat, off_glasses, off_sunglasses, off_socks:
+    off_coat,off_cap,off_hat,off_glasses,off_sunglasses,off_socks:
        horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
        default: bored=10
   get:
     naked:
       horny,stalk,lone,tech: hot,happy,bidding,cheering,admire=50
       perv: bored=-20
-      rel,intel: disgust,deffensive=-30
+      rel,intel: disgust,defensive=-30
       news: bored=-10
       emo: cute=15
       default: interested=15
     naughty:
       horny,stalk,lone,tech: hot,happy,bidding,cheering=50
       perv: happy,cheering=5
-      rel: deffensive,disgust=-20
+      rel: defensive,disgust=-20
       default: interested,laughing=15
     under_table:
       default: laughing=15
-    on_table, under_bed:
+    on_table,under_bed:
       horny,perv: hot,cheering=15
       lone,emo,intel,news,rel: bored=-10
       default: laughing=15
   eat:
-    
+
 
 chat:
   reactions:
@@ -148,7 +143,7 @@ chat:
         - ???
         - huh?
         - eh?
-      deffensive:
+      defensive:
         - You should not do this!
         - I don't think this is a good thing to do.
         - U stop it!
@@ -162,7 +157,7 @@ chat:
         - \( • ◡ • )/
 
     erotic:
-      boring:
+      bored:
         - booooooooooo
       Dance:
         - Dance for me baby!
