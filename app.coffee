@@ -29,6 +29,8 @@ app.use sassMiddleware(
 browserify.settings('transform', coffeeify)
 app.get('/javascripts/base.js', browserify('./src/javascripts/base.coffee'))
 app.use('/javascripts', express.static(path.join(__dirname, 'node_modules/phaser/dist')))
+app.use('/javascripts', express.static(path.join(__dirname, 'node_modules/three/build')))
+app.use('/javascripts', express.static(path.join(__dirname, 'node_modules/three/examples/js')))
 app.use express.static(path.join(__dirname, 'public'))
 
 app.use '/', indexRouter
