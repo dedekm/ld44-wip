@@ -93,7 +93,9 @@ actions:
       lone,emo,intel,news,rel: bored=-10
       default: laughing=15
   eat:
-
+    apple,orange,pear:
+      horny,perv: bored=-10
+      default: bored=-5
 
 chat:
   reactions:
@@ -156,13 +158,25 @@ chat:
         - cutiee :*
         - \( • ◡ • )/
 
-    erotic:
+    horny:
       bored:
         - booooooooooo
       Dance:
         - Dance for me baby!
 
   viewers:
+    groups:
+      - emo
+      - game
+      - horny
+      - intel
+      - life
+      - lone
+      - news
+      - perv
+      - rel
+      - stalk
+      - tech
     names:
       - guy
       - cutie

@@ -30,7 +30,7 @@ class Chat extends Object
 
     if @lastUpdated / 1000 > 1
       @lastUpdated = 0
-      @randomViewer().react(@lastCategory || 'boring')
+      @randomViewer().react(@lastCategory || 'bored')
 
   randomViewer: () ->
     Phaser.Utils.Array.GetRandom(@viewers)
