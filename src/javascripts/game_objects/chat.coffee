@@ -9,6 +9,8 @@ class Chat extends Object
     @scene = scene
     @lines = []
     @viewers = []
+    @lastUpdated = 0
+    @lastCategory = undefined
     for [0...10]
       @viewers.push(new Viewer(@scene))
 
@@ -16,9 +18,21 @@ class Chat extends Object
 
   addLine: (text) ->
     @lines.shift() if @lines.length >= MAX_LINES_COUNT
-
-    viewer = Phaser.Utils.Array.GetRandom(@viewers)
-    @lines.push "#{viewer.name}: #{viewer.react(text)}"
+    @lines.push(text)
     @text.text = @lines.join("\n")
+
+  react: (category) ->
+    @lastCategory = category
+    @randomViewer().react(category)
+
+  update: (time, delta) ->
+    @lastUpdated += delta
+
+    if @lastUpdated / 1000 > 1
+      @lastUpdated = 0
+      @randomViewer().react(@lastCategory || 'boring')
+
+  randomViewer: () ->
+    Phaser.Utils.Array.GetRandom(@viewers)
 
 module.exports = Chat

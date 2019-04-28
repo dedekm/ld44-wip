@@ -46,7 +46,7 @@ module.exports = ->
     @scene.changeInputLine(@value)
     if inputValid
       @scene.changeResponseLine('...')
-      @scene.chat.addLine(response)
+      @scene.chat.react(response)
     else
       @scene.changeResponseLine(response)
 
