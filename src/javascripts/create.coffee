@@ -3,6 +3,13 @@ Chat = require './game_objects/chat.coffee'
 
 WELCOME_TEXT = 'What am I going to do today?'
 
+processInput = (string) ->
+  splitChar = '{split}'
+  string.replace(/(?:(the|a|an) +)/g, '') # remove articles
+        .replace(/^\s+|\s+$/g, '') # remove spaces at start / end
+        .replace(/ +(?= )/g,'') # remove multiple spaces
+        .replace(/\s+/, splitChar).split(splitChar) #split by first space
+
 module.exports = ->
   @data = @cache.json.get('data')
   @itemsList = []
@@ -26,10 +33,7 @@ module.exports = ->
   input = (e) ->
     @scene.postInput(@value)
 
-    sentence = @value.split(' ').filter((v) ->
-      ['a', 'the'].indexOf(v) == -1
-    )
-
+    sentence = processInput(@value)
     inputValid = false
     data = @scene.data
 
