@@ -1,8 +1,10 @@
+Utils = require './utils.coffee'
 Chat = require './game_objects/chat.coffee'
 
 WELCOME_TEXT = 'What am I going to do today?'
 
 module.exports = ->
+  @postInput = Utils.postInput
   @chat = new Chat(@)
 
   @inputLine = @add.text(0, 240 - 32, '', @default_text_options)
@@ -14,6 +16,8 @@ module.exports = ->
     @responseLine.text = text
 
   input = (e) ->
+    @scene.postInput(@value)
+
     sentence = @value.split(' ').filter((v) ->
       ['a', 'the'].indexOf(v) == -1
     )

@@ -15,4 +15,8 @@ router.get '/data.json', (req, res, next) ->
   res.setHeader('Content-Type', 'application/json')
   res.end(indentedJson)
 
+router.post '/input', (req, res, next) ->
+  console.log ">> #{req.body.input}"
+  res.sendStatus(200)
+
 module.exports = router
