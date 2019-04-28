@@ -4,7 +4,7 @@ class Viewer extends Object
 
     @scene = scene
     @group = Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.groups)
-    @name = Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.names) + Phaser.Math.Between(0, 99)
+    @name = @generateName()
 
   react: (reaction) ->
     [category, value] = reaction.split('=')
@@ -21,5 +21,25 @@ class Viewer extends Object
 
     message = Phaser.Utils.Array.GetRandom(messages)
     @scene.chat.addLine("#{@name}: #{message}")
+
+  generateName: ->
+    prefix = @generateNamePart('prefix')
+    suffix = @generateNamePart('suffix', 0.15) || @generateNumber(0.6)
+    wrap = @generateNamePart('wrap')
+    base = @generateNamePart('base', 1)
+    name = [prefix, base, suffix].join('')
+    name = wrap.replace('{name}', name) if wrap
+    name
+
+  generateNamePart: (partName, n = 0.3) ->
+    if n == 1 || Math.random() < n
+      if @scene.data.chat.viewers.names[partName][@group]
+        Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.names[partName][@group])
+      else
+        Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.names[partName].default)
+
+  generateNumber: (n = 0.3) ->
+    if n == 1 || Math.random() < n
+      Phaser.Math.Between(0, 99)
 
 module.exports = Viewer

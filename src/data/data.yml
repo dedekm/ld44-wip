@@ -178,6 +178,26 @@ chat:
       - stalk
       - tech
     names:
-      - guy
-      - cutie
-      - gamer
+      prefix:
+        default:
+          - cool
+      base:
+        default:
+          - guy
+          - girl
+          - cutie
+          - king
+          - queen
+        game:
+          - gamer
+          - samurai
+      suffix:
+        default:
+          - '@gmail.com'
+          - '@yahoo.com'
+        game,perv:
+          - 'killer'
+      wrap:
+        default:
+          - '>>{name}<<'
+          - '(((({name}))))'
