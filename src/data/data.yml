@@ -1,36 +1,62 @@
 actions:
-  sleep:
-    response: boring
-  kick:
-    response:
-      - defensive
-      - hot
-
-items:
-  pillow:
-    actions:
-      eat:
-        response:
-          - weird
-          - boring
-      kick:
-        response:
+  dance:
+    undefined:
+      lonely_people:
+        p: 10
+        reaction:
           - hot
-          - boring
+          - cheering
+          - Dance
+      tech:
+        p: -10
+        reaction: boring
+      default:
+        p: 2
+        reaction: cute
+    samba:
+      lonely_people:
+        p: 15
+        reaction:
+          - hot
+          - Dance
+      default:
+        p: 2
+        reaction: cute
+  eat:
+    apple:
+      default:
+        p: -2
+        reaction: boring
+    burger:
+      default:
+        p: -4
+        reaction: boring
 
 chat:
   reactions:
-    boring:
-      - This is boring!
-      - I'm sleepy...
-      - Booring >:(
-    hot:
-      - This is hot!! <3
-      - I want more!!!
-    defensive:
-      - Uff, you shouldn't do this.
-    weird:
-      - ???
+    default:
+      boring:
+        - This is boring!
+        - I'm sleepy...
+        - Booring >:(
+      hot:
+        - This is hot!! <3
+        - I want more!!!
+      defensive:
+        - Uff, you shouldn't do this.
+      weird:
+        - ???
+      cute:
+        - cutiee :*
+        - \( • ◡ • )/
+      Dance:
+        - Nice moves!
+
+    erotic:
+      boring:
+        - booooooooooo
+      Dance:
+        - Dance for me baby!
 
   viewers:
     names:

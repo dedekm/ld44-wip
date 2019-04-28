@@ -4,6 +4,14 @@ Chat = require './game_objects/chat.coffee'
 WELCOME_TEXT = 'What am I going to do today?'
 
 module.exports = ->
+  @data = @cache.json.get('data')
+  @itemsList = []
+  for action, items of @data.actions
+    for item in Object.keys(items)
+      for i in item.split(',')
+        unless i == 'undefined'
+          @itemsList.push(i)
+
   @postInput = Utils.postInput
   @chat = new Chat(@)
 
@@ -23,23 +31,25 @@ module.exports = ->
     )
 
     inputValid = false
-    data = @scene.data()
-    if sentence.length > 1
-      action = sentence[0]
-      item = sentence[1]
-      if data.items[item]
-        if data.items[item].actions[action]
-          response = data.items[item].actions[action].response
+    data = @scene.data
+
+    action = sentence[0]
+    if data.actions[action]
+      if sentence.length == 1
+        if data.actions[action].undefined
+          response = data.actions[action].undefined.default.reaction
           inputValid = true
         else
-          response = "I have #{item}, but I can't #{action} it"
-    else
-      word = sentence[0]
-      if data.actions[word]
-        response = data.actions[word].response
-        inputValid = true
-      else if data.items[word]
-        response = "What do you want to do with #{word}"
+          response = "What do you want to #{action}?"
+      else
+        item = sentence[1]
+        if data.actions[action][item]
+          response = data.actions[action][item].default.reaction
+          inputValid = true
+        else
+          response = "You can #{action} but not #{item}..."
+    else if @scene.itemsList.indexOf(action) != -1
+      response = "What do you want to do with #{action}?"
 
     response ||= "Don't know how to #{@value}..."
 

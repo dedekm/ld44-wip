@@ -3,6 +3,3 @@ module.exports = ->
     fontSize: '12px'
 
   @load.json('data', '/data.json')
-
-  @data = ->
-    @cache.json.get('data')
