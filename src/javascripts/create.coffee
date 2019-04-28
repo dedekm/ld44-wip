@@ -51,7 +51,7 @@ module.exports = ->
     if data.actions[action]
       if sentence.length == 1
         if data.actions[action].undefined
-          response = data.actions[action].undefined.default.reaction
+          response = data.actions[action].undefined.default
           inputValid = true
         else
           response = "What do you want to #{action}?"
@@ -59,7 +59,7 @@ module.exports = ->
         restOfSentence = sentence[1]
         response = findResponse(restOfSentence.split(' '), data.actions[action])
         if response
-          response = response.default.reaction
+          response = response.default
           inputValid = true
         else
           response = "You can #{action} but not #{restOfSentence}..."

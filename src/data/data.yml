@@ -1,41 +1,22 @@
 actions:
   dance:
     undefined:
-      lonely_people:
-        p: 10
-        reaction:
-          - hot
-          - cheering
-          - Dance
-      tech:
-        p: -10
-        reaction: boring
-      default:
-        p: 2
-        reaction: cute
-    samba:
-      lonely_people:
-        p: 15
-        reaction:
-          - hot
-          - Dance
-      default:
-        p: 2
-        reaction: cute
+      default: cute=2
+      lonely_people: hot,cheering,Dance=10
+      tech: boring=-10
+    samba, tango:
+      default: cute=2
+      lonely_people: hot,Dance=15
     on:
       table:
-        default:
-          p: 10
-          reaction: hot
+        default: cute=2
+        lonely_people: hot,Dance=16
+
   eat:
-    apple:
-      default:
-        p: -2
-        reaction: boring
+    ananas,apple,pear:
+      default: boring=-2
     burger:
-      default:
-        p: -4
-        reaction: boring
+      default: boring=-4
 
 chat:
   reactions:
