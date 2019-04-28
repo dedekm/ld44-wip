@@ -22,6 +22,11 @@ actions:
       default:
         p: 2
         reaction: cute
+    on:
+      table:
+        default:
+          p: 10
+          reaction: hot
   eat:
     apple:
       default:

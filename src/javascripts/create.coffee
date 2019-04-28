@@ -3,6 +3,16 @@ Chat = require './game_objects/chat.coffee'
 
 WELCOME_TEXT = 'What am I going to do today?'
 
+findResponse = (words, data) ->
+  word = words.shift()
+  if !word
+    if data.default
+      data
+    else
+      # TODO
+  else if data[word]
+    findResponse(words, data[word])
+
 processInput = (string) ->
   splitChar = '{split}'
   string.replace(/(?:(the|a|an) +)/g, '') # remove articles
@@ -46,12 +56,13 @@ module.exports = ->
         else
           response = "What do you want to #{action}?"
       else
-        item = sentence[1]
-        if data.actions[action][item]
-          response = data.actions[action][item].default.reaction
+        restOfSentence = sentence[1]
+        response = findResponse(restOfSentence.split(' '), data.actions[action])
+        if response
+          response = response.default.reaction
           inputValid = true
         else
-          response = "You can #{action} but not #{item}..."
+          response = "You can #{action} but not #{restOfSentence}..."
     else if @scene.itemsList.indexOf(action) != -1
       response = "What do you want to do with #{action}?"
 
