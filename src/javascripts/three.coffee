@@ -6,7 +6,7 @@ material = undefined
 
 initialize = ->
   camera = new (THREE.PerspectiveCamera)(50, window.innerWidth / window.innerHeight, 1, 2000)
-  camera.position.z = 500
+  camera.position.z = 400
   scene = new (THREE.Scene)
   material = new (THREE.MeshBasicMaterial)
   mesh = new (THREE.Mesh)(new (THREE.PlaneBufferGeometry)(300, 150), material)
@@ -16,6 +16,11 @@ initialize = ->
   renderer.setSize window.innerWidth, window.innerHeight
   document.body.appendChild renderer.domElement
   window.addEventListener 'resize', onWindowResize, false
+
+  controls = new THREE.PointerLockControls( camera )
+  window.addEventListener( 'click', () ->
+    controls.lock()
+  , false )
 
 setupCanvasDrawing = ->
   # get canvas and context
@@ -29,7 +34,6 @@ onWindowResize = ->
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
   renderer.setSize window.innerWidth, window.innerHeight
-  return
 
 animate = ->
   requestAnimationFrame animate
