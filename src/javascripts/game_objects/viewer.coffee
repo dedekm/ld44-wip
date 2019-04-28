@@ -1,13 +1,9 @@
-NAMES = ['guy', 'cutie', 'gamer']
-randomName = ->
-  Phaser.Utils.Array.GetRandom(NAMES) + Phaser.Math.Between(0, 99)
-
-class Follower extends Object
+class Viewer extends Object
   constructor: (scene) ->
     super()
 
     @scene = scene
-    @name = randomName()
+    @name = Phaser.Utils.Array.GetRandom(@scene.data().chat.viewers.names) + Phaser.Math.Between(0, 99)
 
   react: (category) ->
     if Array.isArray(category)
@@ -18,4 +14,4 @@ class Follower extends Object
     else
       throw "unknown category: #{category}"
 
-module.exports = Follower
+module.exports = Viewer

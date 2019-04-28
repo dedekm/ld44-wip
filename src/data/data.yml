@@ -10,9 +10,13 @@ items:
   pillow:
     actions:
       eat:
-        response: Num
+        response:
+          - weird
+          - boring
       kick:
-        response: Puff
+        response:
+          - hot
+          - boring
 
 chat:
   reactions:
@@ -25,3 +29,11 @@ chat:
       - I want more!!!
     defensive:
       - Uff, you shouldn't do this.
+    weird:
+      - ???
+
+  viewers:
+    names:
+      - guy
+      - cutie
+      - gamer
