@@ -1,42 +1,165 @@
 actions:
-  dance:
-    undefined:
-      default: cute=2
-      lonely_people: hot,cheering,Dance=10
-      tech,gamers: boring=-10
-    samba, tango:
-      default: cute=2
-      lonely_people: hot,Dance=15
-    on:
-      table:
-        default: cute=2
-        lonely_people: hot,Dance=16
 
+  do:
+    squad:
+      horny: hot,cheering,admire=15
+      life: hot,cheering,admire=20
+      intel,tech,game: bored=-15
+      default: bored=-5
+    pirouette, backflip:
+      life: cheering,admire,interested=20
+      horny: admire=8
+    forward_split, middle_split:
+      life,horny: cheering,admire,interested=20
+      default: bored=-10
+    stupid_thing:
+      lone,bored: happy,laughing,cheering=20
+      game: happy,laughing=5
+      rel,news,life: deffensive=-10
+      default: laughing,bored=1
+    stupid_things:
+      lone,bored: happy,laughing,cheering=20
+      game: happy,laughing=5
+      rel,news,life: deffensive=-10
+      default: laughing,bored=1
+    something:
+      default: cheering=1
+  make:
+    funny_face:
+      horny,rel,news,life,itel,tech: deffensive,weird=-8
+      lone,bored: laughing=15
+      default: laughing=3
+    sad_face:
+      emo: sad=30
+      default: sad,laughting=-3
+  jump:
+    undefined, off_bed, on_bed:
+      lone,bored,horny: laughing,cheering=5
+      game,tech,intel,news: bored=-15
+      emo: happy=10
+      default: bored=-5
+  shit:
+    undefined:
+      perv: happy,interested,cheering,bidding,hot=200
+      horny: interested, deffensive=10
+      bored: laughing=30
+      rel,intel: disgust,weird,scared=-100
+      default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
+    and_piss:
+      perv: happy,interested,cheering,bidding,hot=300
+      horny: interested, deffensive,hot=30
+      rel,intel: disgust,weird,scared=-150
+      default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
+    on_keyboard:
+      perv: happy,interested,cheering,bidding,hot=300
+      horny: interested, deffensive,hot=30
+      game,tech: disgust,scared=-40
+      rel,intel: disgust,weird,scared=-150
+      default: disgust,weird,laughing=-15
+  be:
+    naughty, obscene:
+      horny,perv: hot=40
+      intel,news,rel: deffensive=-40
+      default: laughing,bored=3
+    myself:
+      #easteregg???
+  strip:
+    undefined:
+      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
+      rel,intel: disgust,deffensive=-30
+      news: bored=-10
+      default: interested=15
+  take:
+    off_t-shirt, off_tshirt, off_trousers, off_skirt, off_tights, off_g-string, off_gstring:
+      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=20
+      rel,intel: disgust,deffensive=-20
+      news: bored=-10
+      default: interested=10
+    off_coat, off_cap, off_hat, off_glasses, off_sunglasses, off_socks:
+       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
+       default: bored=10
+  get:
+    naked:
+      horny,stalk,lone,tech: hot,happy,bidding,cheering,admire=50
+      perv: bored=-20
+      rel,intel: disgust,deffensive=-30
+      news: bored=-10
+      emo: cute=15
+      default: interested=15
+    naughty:
+      horny,stalk,lone,tech: hot,happy,bidding,cheering=50
+      perv: happy,cheering=5
+      rel: deffensive,disgust=-20
+      default: interested,laughing=15
+    under_table:
+      default: laughing=15
+    on_table, under_bed:
+      horny,perv: hot,cheering=15
+      lone,emo,intel,news,rel: bored=-10
+      default: laughing=15
   eat:
-    ananas,apple,pear:
-      default: boring=-2
-    burger:
-      default: boring=-4
+    
 
 chat:
   reactions:
     default:
-      boring:
-        - This is boring!
-        - I'm sleepy...
-        - Booring >:(
       hot:
         - This is hot!! <3
         - I want more!!!
-      defensive:
+      laughing:
+        - hahahahaha
+        - :D:D:D:D:D:D
+        - so funny
+        - I'm laughting
+      happy:
+        - Makes me so happy!!!
+        - Yes, good mood first!
+      sad:
+        - makes me sad :(
+        - :(
+        - :'(
+        - Life is sad...
+      bored:
+        - This is boring!
+        - I'm sleepy...
+        - Booring >:(
+      interested:
+        - Hmm... interesting
+        - I see...
+        - Aha!
+        - Well, that's something to think about!
+        - ok, you've got my attention now
+      disgust:
         - Uff, you shouldn't do this.
+        - Yuck!
+        - I'm not gonna watch THAT!
+        - :ú
+        - uh oh
+      scared:
+        - Uuuaaa
+        - Uff, what was that?!
+        - what the heck
+      cheering:
+        - c'mon c'mon
+        - You can do it! Come on!
+        - Yes, yes, more, more you do
+        - hey, we want more
       weird:
         - ???
+        - huh?
+        - eh?
+      deffensive:
+        - You should not do this!
+        - I don't think this is a good thing to do.
+        - U stop it!
+      admire:
+        - Nice one!
+        - niceeee :))))
+        - x-tra-or-di-na-ry
+        - ♥‿♥
       cute:
         - cutiee :*
         - \( • ◡ • )/
-      Dance:
-        - Nice moves!
 
     erotic:
       boring:
