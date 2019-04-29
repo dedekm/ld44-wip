@@ -1,5 +1,3 @@
-
-
 module.exports = (time, delta) ->
   game = @game
   @updateMaterial = (snapshot) ->
