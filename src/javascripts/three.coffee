@@ -11,6 +11,13 @@ initialize = ->
   plane = new (THREE.Mesh)(new (THREE.PlaneBufferGeometry)(300, 150), material)
   scene.add(plane)
   plane.position.z = -400
+
+  geometry2 = new (THREE.BoxGeometry)(320, 170, 10)
+  material2 = new (THREE.MeshBasicMaterial)(color: 0x121212)
+  cuboid = new (THREE.Mesh)(geometry2, material2)
+  scene.add(cuboid)
+  cuboid.position.z = -410
+
   renderer = new (THREE.WebGLRenderer)(antialias: true)
   renderer.setPixelRatio window.devicePixelRatio
   renderer.setSize window.innerWidth, window.innerHeight
@@ -18,7 +25,7 @@ initialize = ->
   window.addEventListener 'resize', onWindowResize, false
 
   controls = new THREE.PointerLockControls( camera )
-  renderer.domElement.addEventListener( 'click', () ->
+  renderer.domElement.addEventListener('click', (e) ->
     controls.lock()
   , false )
 
