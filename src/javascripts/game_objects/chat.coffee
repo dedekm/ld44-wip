@@ -14,12 +14,13 @@ class Chat extends Object
     for [0...10]
       @viewers.push(new Viewer(@scene))
 
-    @text = @scene.add.text(0, 0, '', @scene.default_text_options)
+    @chatText = @scene.add.text(0, 0, '', @scene.default_text_options)
+    @setViewersCounter()
 
   addLine: (text) ->
     @lines.shift() if @lines.length >= MAX_LINES_COUNT
     @lines.push(text)
-    @text.text = @lines.join("\n")
+    @chatText.text = @lines.join("\n")
 
   react: (category) ->
     @lastCategory = category
@@ -33,7 +34,15 @@ class Chat extends Object
       @lastUpdated = 0
       @randomViewer().react('bored=-1')
 
+    @setViewersCounter()
+
   randomViewer: () ->
     Phaser.Utils.Array.GetRandom(@viewers)
+
+  removeViewer: (viewer) ->
+
+  setViewersCounter: () ->
+    @viewersCounter ||= @scene.add.text(220, 0, '', @scene.default_text_options)
+    @viewersCounter.text = "viewers: #{@viewers.length}"
 
 module.exports = Chat

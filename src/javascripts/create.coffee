@@ -29,6 +29,7 @@ module.exports = ->
         unless i == 'undefined'
           @itemsList.push(i)
 
+  Utils.postNewUser()
   @postInput = Utils.postInput
   @chat = new Chat(@)
 
