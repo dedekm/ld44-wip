@@ -23,14 +23,15 @@ class Chat extends Object
 
   react: (category) ->
     @lastCategory = category
-    @randomViewer().react(category)
+    for viewer in @viewers
+      viewer.react(category)
 
   update: (time, delta) ->
     @lastUpdated += delta
 
-    if @lastUpdated / 1000 > 1
+    if @lastUpdated / 5000 > 1
       @lastUpdated = 0
-      @randomViewer().react(@lastCategory || 'bored')
+      @randomViewer().react('bored=-1')
 
   randomViewer: () ->
     Phaser.Utils.Array.GetRandom(@viewers)

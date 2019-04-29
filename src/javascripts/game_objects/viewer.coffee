@@ -5,9 +5,14 @@ class Viewer extends Object
     @scene = scene
     @group = Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.groups)
     @name = @generateName()
+    @satisfaction = 10
 
   react: (reaction) ->
     [category, value] = reaction.split('=')
+
+    if value
+      @satisfaction += value * (0.9 + 0.2 * Math.random())
+
     if category.indexOf(',') != -1
       category = Phaser.Utils.Array.GetRandom(category.split(','))
 
