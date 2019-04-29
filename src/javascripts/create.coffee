@@ -1,6 +1,7 @@
 Utils = require './utils.coffee'
 Response = require './response.coffee'
 Chat = require './game_objects/chat.coffee'
+Money = require './game_objects/money.coffee'
 
 WELCOME_TEXT = 'What am I going to do today?'
 
@@ -14,6 +15,7 @@ module.exports = ->
           @itemsList.push(i)
 
   @postInput = Utils.postInput
+  @money = new Money(@)
   @chat = new Chat(@)
 
   @inputLine = @add.text(0, 240 - 32, '', @default_text_options)

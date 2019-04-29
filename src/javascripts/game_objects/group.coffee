@@ -8,7 +8,25 @@ class Group extends Object
     @count = count
     @satisfaction = 10
 
+    @callLoop(3)
+
+  callLoop: (delay) ->
+    @scene.time.addEvent(
+      delay: delay * 1000
+      callback: ->
+        if @count > 0
+          if @satisfaction < 0
+            @count -= 1
+            @scene.chat.setViewersCounter()
+          else if @satisfaction > 20
+            @scene.money.add(1)
+        @callLoop(Phaser.Math.Between(1, 5))
+
+      callbackScope: @
+    )
+
   react: (reaction) ->
+    return if @count <= 0
     if typeof reaction == 'object'
       reaction = (reaction[@type] || reaction.default)
 
