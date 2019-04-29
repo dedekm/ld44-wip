@@ -12,6 +12,7 @@ module.exports = ->
         unless i == 'undefined'
           @itemsList.push(i)
 
+  Utils.postNewUser()
   @postInput = Utils.postInput
   @money = new Money(@)
   @chat = new Chat(@)

@@ -41,8 +41,25 @@ router.get '/data.json', (req, res, next) ->
       res.end('{}')
   )
 
+writeToFile = (filename, str) ->
+  status = 200
+  fs.appendFile filename, str, (err) ->
+    if err
+      throw err
+      status = 500
+  status
+
+router.post '/user', (req, res, next) ->
+  str = "#{req.body.user}:\n"
+  str += "  started_at: #{new Date().toJSON()}\n"
+  str += "  ip: #{req.ip}\n"
+  str += "  actions:\n"
+  status = writeToFile("data/#{req.body.user}.yml", str)
+  res.sendStatus(status)
+
 router.post '/input', (req, res, next) ->
-  console.log ">> #{req.body.input}"
-  res.sendStatus(200)
+  str = "    - #{req.body.input} [#{new Date().toJSON()}]\n"
+  status = writeToFile("data/#{req.body.user}.yml", str)
+  res.sendStatus(status)
 
 module.exports = router

@@ -22,7 +22,6 @@ class Chat extends Object
       loop: true
     )
 
-
   addLine: (text) ->
     @lines.shift() if @lines.length >= MAX_LINES_COUNT
     @lines.push(text)
