@@ -22,11 +22,11 @@ actions:
         life,horny: cheering,admire,interested=20
         default: bored=-10
     stupid:
-        thing,things:
-          lone,bored: happy,laughing,cheering=20
-          game: happy,laughing=5
-          rel,news,life: defensive=-10
-          default: laughing,bored=1
+      thing,things:
+        lone,bored: happy,laughing,cheering=20
+        game: happy,laughing=5
+        rel,news,life: defensive=-10
+        default: laughing,bored=1
     something:
       default: cheering=1
   make:
@@ -104,8 +104,8 @@ take:
       news: bored=-10
       default: interested=10
     coat,cap,hat,glasses,sunglasses,socks:
-     horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
-     default: bored=10
+      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
+      default: bored=10
   get:
     naked:
       horny,stalk,lone,tech: hot,happy,bidding,cheering,admire=50
