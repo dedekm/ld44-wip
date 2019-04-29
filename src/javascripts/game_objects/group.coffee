@@ -1,10 +1,11 @@
-class Viewer extends Object
-  constructor: (scene) ->
+class Group extends Object
+  constructor: (scene, category, count) ->
     super()
 
     @scene = scene
-    @group = Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.groups)
-    @name = @generateName()
+    @group = category || Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.groups)
+    @names = [@generateName()] # TODO
+    @count = count
     @satisfaction = 10
 
   react: (reaction) ->
@@ -25,7 +26,7 @@ class Viewer extends Object
       throw "unknown category: #{category}"
 
     message = Phaser.Utils.Array.GetRandom(messages)
-    @scene.chat.addLine("#{@name}: #{message}")
+    @scene.chat.addLine("#{@getRandomName()}: #{message}")
 
   generateName: ->
     prefix = @generateNamePart('prefix')
@@ -47,4 +48,7 @@ class Viewer extends Object
     if n == 1 || Math.random() < n
       Phaser.Math.Between(0, 99)
 
-module.exports = Viewer
+  getRandomName: ->
+    Phaser.Utils.Array.GetRandom(@names)
+
+module.exports = Group

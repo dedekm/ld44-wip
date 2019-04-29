@@ -1,4 +1,4 @@
-Viewer = require './viewer.coffee'
+Group = require './group.coffee'
 
 MAX_LINES_COUNT = 12
 
@@ -8,32 +8,43 @@ class Chat extends Object
 
     @scene = scene
     @lines = []
-    @viewers = []
-    @lastUpdated = 0
-    @lastCategory = undefined
-    for [0...10]
-      @viewers.push(new Viewer(@scene))
+    @groups = []
+    for groupCategory in @scene.data.chat.viewers.groups
+      @addGroup(groupCategory)
+    @chatText = @scene.add.text(0, 0, '', @scene.default_text_options)
+    @setViewersCounter()
 
-    @text = @scene.add.text(0, 0, '', @scene.default_text_options)
+    @scene.time.addEvent(
+      delay: 10 * 1000
+      callback: ->
+        @randomGroup().react('bored=-1')
+      callbackScope: @,
+      loop: true
+    )
+
 
   addLine: (text) ->
     @lines.shift() if @lines.length >= MAX_LINES_COUNT
     @lines.push(text)
-    @text.text = @lines.join("\n")
+    @chatText.text = @lines.join("\n")
 
   react: (category) ->
     @lastCategory = category
-    for viewer in @viewers
-      viewer.react(category)
+    for group in @groups
+      group.react(category)
 
-  update: (time, delta) ->
-    @lastUpdated += delta
+  addGroup: (category) ->
+    @groups.push(new Group(@scene, category, Phaser.Math.Between(5, 7)))
 
-    if @lastUpdated / 5000 > 1
-      @lastUpdated = 0
-      @randomViewer().react('bored=-1')
+  randomGroup: () ->
+    Phaser.Utils.Array.GetRandom(@groups)
 
-  randomViewer: () ->
-    Phaser.Utils.Array.GetRandom(@viewers)
+  setViewersCounter: () ->
+    @viewersCounter ||= @scene.add.text(220, 0, '', @scene.default_text_options)
+    total = 0
+    for g in @groups
+      total += g.count
+
+    @viewersCounter.text = "viewers: #{total}"
 
 module.exports = Chat
