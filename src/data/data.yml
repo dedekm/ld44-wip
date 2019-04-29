@@ -144,12 +144,48 @@ take:
       rel,news,life,tech: weird,disgust=-15
       default: laughing=15
     pillow,sheet:
-      rel,news,life,tech: boring,defensive=-10
+      rel,news,life,tech: bored,defensive=-10
       default: weird,laughing=10
     camera:
       perv: interested,cheering,admire=20
       default: weird,disgust=-5
-    
+  drink:
+    piss:
+      perv: hot,bidding,admire,cheering=60
+      horny: hot,cheering=25
+      default: disgust
+    juice,water,soda:
+      default: bored=-10
+    milk:
+      perv,horny: hot,cheering,interested,Milk=30
+      default: bored=-10
+    honey,chocolate:
+      perv,horny: hot,cheering,interested,Honey,bidding=30
+      bored: laughing=25
+      tech,intel,news,rel: defensive=-18
+      default: laughing,bored=0
+    hot:
+      chocolate:
+        perv,horny: hot,cheering,interested=30
+        bored: laughing=25
+        tech,intel,news,rel: defensive=-18
+        default: laughing,bored=0
+    blood:
+      perv: hot,cheering,interested,Blood,bidding=100
+      emo: Blood=-20
+      default: weird,scared,disgust=-40
+    toilet:
+      tech,intel,news,rel,life,horny: disgust,defensive=-20
+      perv: interested=15
+      default: laughing=10
+    oil:
+      tech,intel,news,rel,life,horny: disgust,defensive=-20
+      perv: interested=15
+      default: weird,laughing=10
+    poison,petrol,diluent,glue,acid,ink: #suicide????????????????????????????????????????
+      perv,stalk: interested,hot,bidding,admire=80
+      default: scared,defensive=40
+
 chat:
   reactions:
     default:
@@ -211,11 +247,48 @@ chat:
         - cutiee :*
         - \( • ◡ • )/
 
+    perv:
+      cheering:
+        - oh shit yes more more !!!!
+      hot:
+        - fuckin luv thit shit ♥
+      Milk:
+        - MILK THAT FUCK!!!
+        - Use your own milk you bastard!
+        - wanna see you drown in it!!!
+        - wanna see you choke
+      Honey:
+        - in your hair, in your ears ! ! !
+        - wanna see you drown in it!!!
+        - wanna see you choke
+        - Swallow bitch! :*
+        - Spread yourself with that gold, my Dear. :-)
+      Blood:
+        - cut the whole arm off, you whore!
+        - I'm bidding now like never. Please, continue, my Dear. :-)
+        - wanna see you choke with your blood
+        - try bubbles pls
+        - BLOOOOOOOOOD that's it, that's what I was looking forward
+        - OOOHHHH finally!!!
+    emo:
+      Blood:
+        - I was here for you but now I see you are just another freak, not real emo (⌣̩̩́_⌣̩̩̀)
+        - I though you're like me, but no, you are not honest (⌣́_⌣̀)
     horny:
+      Honey:
+        - wanna lick it out of ya!
+        - slow pleasure mmmmmmhhh
+        - Spread yourself with that gold
+      Milk:
+        - white love ♡
+        - yes yes whitey stufff
+        - let it pouuuuuuur
+        - that full mouth of milk make me dizzy
       bored:
         - booooooooooo
-      Dance:
-        - Dance for me baby!
+    tech:
+      weird:
+        - ☉_☉
 
   viewers:
     groups:
