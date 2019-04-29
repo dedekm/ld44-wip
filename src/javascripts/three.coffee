@@ -18,7 +18,7 @@ initialize = ->
   window.addEventListener 'resize', onWindowResize, false
 
   controls = new THREE.PointerLockControls( camera )
-  window.addEventListener( 'click', () ->
+  renderer.domElement.addEventListener( 'click', () ->
     controls.lock()
   , false )
 
