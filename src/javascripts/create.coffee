@@ -3,8 +3,6 @@ Response = require './response.coffee'
 Chat = require './game_objects/chat.coffee'
 Money = require './game_objects/money.coffee'
 
-WELCOME_TEXT = 'What am I going to do today?'
-
 module.exports = ->
   @data = @cache.json.get('data')
   @itemsList = []
@@ -18,30 +16,17 @@ module.exports = ->
   @money = new Money(@)
   @chat = new Chat(@)
 
-  @inputLine = @add.text(0, 240 - 32, '', @default_text_options)
-  @changeInputLine = (text) ->
-    @inputLine.text = ">> #{text}"
-
-  @responseLine = @add.text(0, 240 - 16, WELCOME_TEXT, @default_text_options)
   @changeResponseLine = (text) ->
-    @responseLine.text = text
+    @game.three.updateText(hint: text)
 
   @findNestedResponse = Response.findNestedResponse
   @findResponse = Response.findResponse
 
-  input = (e) ->
-    @scene.postInput(@value)
-    @scene.changeInputLine(@value)
+  @input = (value) ->
+    @postInput(value)
 
-    response = @scene.findResponse(@value)
+    response = @findResponse(value)
     if response.value
-      @scene.changeResponseLine('...')
-      @scene.chat.react(response.value)
+      @chat.react(response.value)
     else
-      @scene.changeResponseLine(response.error)
-
-    @value = ''
-
-  inputElement = document.getElementById('text-input')
-  inputElement.scene = @
-  document.getElementById('text-input').addEventListener 'change', input
+      @changeResponseLine(response.error)
