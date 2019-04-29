@@ -272,7 +272,7 @@ actions:
         horny,news,life,perv: bored=-5
         game,tech: laughing=10
         default: happy,admire=10
-    quietly,gently:
+    gently,quietly,nicely,softly,delicately:
       emo,lone,intel,rel: sad,interested,cute,admire=30
       horny,news,life,perv: bored=-18
       default: interested,admire=10
@@ -306,7 +306,107 @@ actions:
       rel: interested,happy,admire=40
       horny,perv,bored,emo: bored=-100
       default: bored=-40
-
+  describe:
+    family:
+      stalk: interested,happy,bidding,cheering=150
+      emo: happy,interested,admire,cute=100
+      rel,lone: happy,interested=30
+      life: interested=15
+      perv: interested=20
+      default: bored,laughing,weird=-20
+      relations:
+        stalk: interested,happy,bidding,cheering=200
+        emo: happy,interested,admire,cute=150
+        rel,lone: happy,interested=50
+        life: interested=25
+        perv: interested=40
+        default: bored,laughing,weird=-10
+    weather:
+      stalk,news: happy,interested,bidding,cheering=80
+      emo: sad,happy=20
+      lone: sad=-35
+      bored: bored=-60
+      default: bored=-30
+    room,house,environment,surroundings,setting,place:
+      stalk: happy,interested,bidding,cheering=80
+      perv: interested=15
+      default: bored=-25
+  talk:
+    undefined:
+      lone: happy,interested=40
+      default: bored=-25
+    weather:
+      stalk,news: happy,interested,bidding,cheering=80
+      emo: sad,happy=20
+      lone: sad=-35
+      bored: bored=-60
+      default: bored=-30
+    family:
+      stalk: interested,happy,bidding,cheering=150
+      emo: happy,interested,admire,cute=100
+      rel,lone: happy,interested=30
+      life: interested=15
+      perv: interested=20
+      default: bored,laughing,weird=-20
+      relations:
+        stalk: interested,happy,bidding,cheering=200
+        emo: happy,interested,admire,cute=150
+        rel,lone: happy,interested=50
+        life: interested=25
+        perv: interested=40
+        default: bored,laughing,weird=-10
+    philosophy:
+      intel: interested,happy,admire,bidding,cheering=150
+      rel: interested,happy,admire=40
+      horny,perv,bored,emo: bored=-100
+      default: bored=-40
+    science:
+      life,news: bored=-10
+      rel: defensive=-25
+      intel: interested,happy,admire,bidding,cheering=15
+      horny,perv,bored,emo: bored=-40
+      default: bored=-35
+    book:
+      life,news,rel,intel: interested=15
+      horny,perv,bored,emo: bored=-40
+      default: bored=-25
+    news:
+      news: interested,happy=100
+      intel: interested,happy=60
+      rel,stalk,life: interested=20
+      horny,perv,game,bored,emo: bored=-25
+    aloud:
+      lone: happy,interested=40
+      default: bored=-25
+    gently,quietly,nicely,softly,delicately:
+      emo,lone,intel,rel: sad,interested,cute,admire=30
+      horny,news,life,perv: bored=-18
+      default: interested,admire=10
+    money:
+      news,intel,life: interested,cheering,admire=30
+      rel,emo: defensive=-20
+      default: bored=-25
+    sponsor: # ADD MONEY BUD TAKE FOLLOWERS AWAY
+      default: bored=-50
+    fast:
+      horny,tech,intel,news,rel,life: bored=-15
+      default: laughing=15
+    slow:
+      bored: bored=-70
+      default: bored=-20
+    rude,dirty,harshly,rudely:
+      horny,perv: hot,cheering,bidding,happy=25
+      rel,intel: defensive=-50
+      default: laughing=15
+    sexy,erotic:
+      horny,perv: hot,cheering,bidding,happy=30
+      rel,intel: defensive=-70
+      default: laughing,interested=15
+    racist,racialist:
+      intel,rel: disgust,defensive,sad=-70
+      tech,lone: cheering,bidding,happy,stalk=40
+      default: defensive=-25
+    
 
 chat:
   reactions:
