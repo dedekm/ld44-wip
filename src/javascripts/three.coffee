@@ -1,16 +1,16 @@
 camera = undefined
 scene = undefined
 renderer = undefined
-mesh = undefined
+plane = undefined
 material = undefined
 
 initialize = ->
   camera = new (THREE.PerspectiveCamera)(50, window.innerWidth / window.innerHeight, 1, 2000)
-  camera.position.z = 400
   scene = new (THREE.Scene)
   material = new (THREE.MeshBasicMaterial)
-  mesh = new (THREE.Mesh)(new (THREE.PlaneBufferGeometry)(300, 150), material)
-  scene.add mesh
+  plane = new (THREE.Mesh)(new (THREE.PlaneBufferGeometry)(300, 150), material)
+  scene.add(plane)
+  plane.position.z = -400
   renderer = new (THREE.WebGLRenderer)(antialias: true)
   renderer.setPixelRatio window.devicePixelRatio
   renderer.setSize window.innerWidth, window.innerHeight
@@ -37,6 +37,19 @@ onWindowResize = ->
 
 animate = ->
   requestAnimationFrame animate
+
+  if camera.rotation.x < -0.7
+    camera.rotation.x = -0.7
+  else if camera.rotation.x > 0.7
+    camera.rotation.x = 0.7
+
+  if camera.rotation.y < -0.5
+    camera.rotation.y = -0.5
+  else if camera.rotation.y > 0.5
+    camera.rotation.y = 0.5
+
+  camera.rotation.z = 0
+
   renderer.render scene, camera
 
 init = (game) ->
