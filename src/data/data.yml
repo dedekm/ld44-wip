@@ -173,6 +173,7 @@ take:
     blood:
       perv: hot,cheering,interested,Blood,bidding=100
       emo: Blood=-20
+      lone: scared=-40
       default: weird,scared,disgust=-40
     toilet:
       tech,intel,news,rel,life,horny: disgust,defensive=-20
@@ -184,7 +185,56 @@ take:
       default: weird,laughing=10
     poison,petrol,diluent,glue,acid,ink: #suicide????????????????????????????????????????
       perv,stalk: interested,hot,bidding,admire=80
+      lone: scared=-40
       default: scared,defensive=40
+  piss,urinate:
+    undefined:
+      horny,perv: hot,cheering,bidding=25
+      tech,intel,news,rel,life: disgust=-25
+      default: disgust=-15
+    on:
+      bed:
+        horny,perv: hot,cheering,bidding=25
+        tech,intel,news,rel,life: disgust=-25
+        default: disgust=-15
+      camera,keyboard:
+        perv: hot,cheering,bidding=40
+        horny: weird=-15
+        tech,intel,news,rel,life: disgust=-35
+        game,bored: laughing=20
+        default: disgust=-20
+    in:
+      bed,glass:
+        horny,perv: hot,cheering,bidding=25
+        tech,intel,news,rel,life: disgust=-25
+        default: disgust=-15
+      mouth:
+        perv: hot,cheering,bidding,happy=80
+        horny: hot,cheering=35
+        tech,intel,news,rel,life: disgust=-50
+        game,bored: laughing=25
+        default: disgust=-20
+    and:
+      shit:
+        perv: hot,cheering,bidding,happy=80
+        horny: weird=-35
+        tech,intel,news,rel,life: disgust=-50
+        game,bored: laughing=25
+        default: disgust=-40
+  cut:
+    myself:
+      emo: admire,sad,bidding=50
+      lone: scared=-50
+      perv: admire,hot,interested,bidding,Blood=50
+      default: scared,disgust,weird=-25
+    off:
+      chandelier:
+        news,rel: bored,defensive=-10
+        default: laughing=40
+      arm,hand,leg,finger:
+        emo: Blood,scared=-30
+        perv: admire,hot,interested,bidding,Blood=150 #dead after some time????????????????
+        default: scared=-50
 
 chat:
   reactions:
@@ -267,8 +317,8 @@ chat:
         - cut the whole arm off, you whore!
         - I'm bidding now like never. Please, continue, my Dear. :-)
         - wanna see you choke with your blood
-        - try bubbles pls
-        - BLOOOOOOOOOD that's it, that's what I was looking forward
+        - try blood bubbles pls
+        - BLOOOOOOOOOD yes, that's it, that's what I was looking for
         - OOOHHHH finally!!!
     emo:
       Blood:
