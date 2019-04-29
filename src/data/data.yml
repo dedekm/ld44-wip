@@ -1,4 +1,9 @@
 actions:
+  squat:
+    horny: hot,cheering,admire=15
+    life: hot,cheering,admire=20
+    intel,tech,game: bored=-15
+    default: bored=-5
   do:
     striptease:
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
@@ -614,6 +619,30 @@ actions:
         horny,perv: hot,cheering,bidding,happy=50
         tech,intel,news,rel: defensive,disgust,weird=-50
         default: laughing,weird,disgust=-8
+  play:
+    chess:
+      gamer: happy,interested,bored=15
+      intel: interested,admire=25
+      rel: admire=10
+      default: bored=-15
+    with:
+      penis,dick,vagina,pussy,clitoris,clit,bottle,pencil,banana,cucumber,fingers,finger:
+        perv,horny: admire,happy,cheering,hot,bidding=30
+        rel,intel,tech,news,life: disgust,defensive,weird=-30
+        default: laughing,disgust,defensive,weird=-30
+      dog,cat,turtle,mouse:
+        emo,lone: happy,laughing=25
+        default: bored=-10
+      brother,mother,father,grandfather,granfmother:
+        rel: admire,happy=30
+        default: weird,laughing,bored=-15
+      camera:
+        perv,tech: happy,cheering,hot=20
+        default: bored,weird=-10
+      zelda,computer,mario,snake,minesweeper,solitaire,hl2,tf2,counter,fortnite,sims:
+        game: happy,interested,bidding,cheering=70
+        rel,intel,tech,news: defensive=-25
+        def: bored=-10          
 
 chat:
   reactions:
