@@ -15,11 +15,7 @@ actions:
     pirouette,backflip:
       life: cheering,admire,interested=20
       horny: admire=8
-    forward:
-      split:
-        life,horny: cheering,admire,interested=20
-        default: bored=-10
-    middle:
+    forward,middle:
       split:
         life,horny: cheering,admire,interested=20
         default: bored=-10
@@ -62,26 +58,26 @@ actions:
   shit:
     undefined:
       perv: happy,interested,cheering,bidding,hot=100
-      horny: interested, defensive=10
+      horny: interested,defensive=10
       bored: laughing=30
       rel,intel: disgust,weird,scared=-100
       default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
     and:
       piss:
         perv: happy,interested,cheering,bidding,hot=180
-        horny: interested, defensive,hot=30
+        horny: interested,defensive,hot=30
         rel,intel: disgust,weird,scared=-150
         default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
     on:
       keyboard:
         perv: happy,interested,cheering,bidding,hot=200
-        horny: interested, defensive,hot=30
+        horny: interested,defensive,hot=30
         game,tech: disgust,scared=-40
         rel,intel: disgust,weird,scared=-150
         default: disgust,weird,laughing=-15
       table,bed,floor,chair,wall:
         perv: happy,interested,cheering,bidding,hot=100
-        horny: interested, defensive=10
+        horny: interested,defensive=10
         bored: laughing=30
         rel,intel: disgust,weird,scared=-100
         default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
