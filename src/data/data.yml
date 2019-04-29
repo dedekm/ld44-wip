@@ -45,18 +45,18 @@ defensiveactions:
       game,tech,intel,news: bored=-15
       emo: happy=10
       default: bored=-5
-      off:
-       bed:
-         lone,bored,horny: laughing,cheering=5
-         game,tech,intel,news: bored=-15
-         emo: happy=10
-         default: bored=-5
-      on:
-        bed:
-          lone,bored,horny: laughing,cheering=5
-          game,tech,intel,news: bored=-15
-          emo: happy=10
-          default: bored=-5
+    off:
+      bed:
+        lone,bored,horny: laughing,cheering=5
+        game,tech,intel,news: bored=-15
+        emo: happy=10
+        default: bored=-5
+    on:
+      bed:
+        lone,bored,horny: laughing,cheering=5
+        game,tech,intel,news: bored=-15
+        emo: happy=10
+        default: bored=-5
   shit:
     undefined:
       perv: happy,interested,cheering,bidding,hot=100
