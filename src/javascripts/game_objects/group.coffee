@@ -1,16 +1,16 @@
 class Group extends Object
-  constructor: (scene, category, count) ->
+  constructor: (scene, type, count) ->
     super()
 
     @scene = scene
-    @group = category || Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.groups)
+    @type = type || Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.groups)
     @names = [@generateName()] # TODO
     @count = count
     @satisfaction = 10
 
   react: (reaction) ->
     if typeof reaction == 'object'
-      reaction = (reaction[@category] || reaction.default)
+      reaction = (reaction[@type] || reaction.default)
 
     [category, value] = reaction.split('=')
 
@@ -21,8 +21,8 @@ class Group extends Object
       category = Phaser.Utils.Array.GetRandom(category.split(','))
 
     reactions = @scene.data.chat.reactions
-    if reactions[@group] && reactions[@group][category]
-      messages = reactions[@group][category]
+    if reactions[@type] && reactions[@type][category]
+      messages = reactions[@type][category]
     else if reactions.default[category]
       messages = reactions.default[category]
     else
@@ -42,8 +42,8 @@ class Group extends Object
 
   generateNamePart: (partName, n = 0.3) ->
     if n == 1 || Math.random() < n
-      if @scene.data.chat.viewers.names[partName][@group]
-        Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.names[partName][@group])
+      if @scene.data.chat.viewers.names[partName][@type]
+        Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.names[partName][@type])
       else
         Phaser.Utils.Array.GetRandom(@scene.data.chat.viewers.names[partName].default)
 
