@@ -6,4 +6,7 @@ body {
   font-size: 20px;
   width: 640px; }
 
+#phaser-wrapper canvas, #drawing-canvas {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */
