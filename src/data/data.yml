@@ -240,7 +240,17 @@ take:
       horny: hot,bidding,cheering,admire=30
       perv: bored=-15
       default: disgust=-25
-
+  masturbate:
+    undefined:
+      horny: hot,bidding,cheering,admire=30
+      perv: bored=-15
+      default: disgust=-25
+  sing:
+    undefined:
+      emo,lone,intel,rel: happy,admire=20
+      horny,news,life,perv: bored=-20
+      tech,game: disgust=-20
+      default: happy,admire,bored=10
 chat:
   reactions:
     default:
@@ -358,6 +368,7 @@ chat:
       - rel
       - stalk
       - tech
+      - bored
     names:
       prefix:
         default:
