@@ -90,22 +90,22 @@ actions:
       default: laughing,bored=3
     myself:
       #easteregg??????????????????????????????????????????
-strip:
-  undefined:
-    horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
-    rel,intel: disgust,defensive=-30
-    news: bored=-10
-    default: interested=15
-take:
-  off:
-    t-shirt,tshirt,trousers,skirt,tights,g-string,gstring:
-      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=20
-      rel,intel: disgust,defensive=-20
+  strip:
+    undefined:
+      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
+      rel,intel: disgust,defensive=-30
       news: bored=-10
-      default: interested=10
-    coat,cap,hat,glasses,sunglasses,socks:
-      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
-      default: bored=10
+      default: interested=15
+  take:
+    off:
+      t-shirt,tshirt,trousers,skirt,tights,g-string,gstring:
+        horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=20
+        rel,intel: disgust,defensive=-20
+        news: bored=-10
+        default: interested=10
+      coat,cap,hat,glasses,sunglasses,socks:
+        horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
+        default: bored=10
   get:
     naked:
       horny,stalk,lone,tech: hot,happy,bidding,cheering,admire=50
