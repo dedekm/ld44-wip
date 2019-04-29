@@ -235,6 +235,7 @@ take:
         emo: Blood,scared=-30
         perv: admire,hot,interested,bidding,Blood=150 #dead after some time????????????????
         default: scared=-50
+<<<<<<< HEAD
   jerk:
     off:
       horny: hot,bidding,cheering,admire=30
@@ -242,6 +243,8 @@ take:
       default: disgust=-25
   
   #commit test------------------------------------------------------------------
+=======
+>>>>>>> parent of 8e2dfeb... test commit
 
 chat:
   reactions:
