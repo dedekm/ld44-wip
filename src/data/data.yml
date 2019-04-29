@@ -1,21 +1,23 @@
 actions:
-  squat:
-    undefined:
-      horny: hot,cheering,admire=15
-      life: hot,cheering,admire=20
-      intel,tech,game: bored=-15
-      default: bored=-5
   do:
     striptease:
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
       rel,intel: disgust,defensive=-30
       news: bored=-10
       default: interested=15
-    squat: squat
+    squat:
+      horny: hot,cheering,admire=15
+      life: hot,cheering,admire=20
+      intel,tech,game: bored=-15
+      default: bored=-5
     pirouette,backflip:
       life: cheering,admire,interested=20
       horny: admire=8
-    forward,middle:
+    forward:
+      split:
+        life,horny: cheering,admire,interested=20
+        default: bored=-10
+    middle:
       split:
         life,horny: cheering,admire,interested=20
         default: bored=-10
@@ -58,26 +60,26 @@ actions:
   shit:
     undefined:
       perv: happy,interested,cheering,bidding,hot=100
-      horny: interested,defensive=10
+      horny: interested, defensive=10
       bored: laughing=30
       rel,intel: disgust,weird,scared=-100
       default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
     and:
       piss:
         perv: happy,interested,cheering,bidding,hot=180
-        horny: interested,defensive,hot=30
+        horny: interested, defensive,hot=30
         rel,intel: disgust,weird,scared=-150
         default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
     on:
       keyboard:
         perv: happy,interested,cheering,bidding,hot=200
-        horny: interested,defensive,hot=30
+        horny: interested, defensive,hot=30
         game,tech: disgust,scared=-40
         rel,intel: disgust,weird,scared=-150
         default: disgust,weird,laughing=-15
       table,bed,floor,chair,wall:
         perv: happy,interested,cheering,bidding,hot=100
-        horny: interested,defensive=10
+        horny: interested, defensive=10
         bored: laughing=30
         rel,intel: disgust,weird,scared=-100
         default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
@@ -468,10 +470,143 @@ actions:
       chandelier:
         rel,intel,horny,perv: bored,defensive=-15
         default: laughing=40
-    myslef:
+    myself: #SUICIDE??????????????????????????????
       perv: bidding,cheering,happy,interested,hot=200
       news,stalk: scared=20
       default: scared=-100
+  kill:
+    fly:
+      horny,intel,news,rel: bored=-10
+      default: laughing=10
+    hamster,guinea,guinea-pig,fly:
+      perv: laughing,bidding,cheering,happy,Blood=70
+      emo: Blood,scared,disgust=-35
+      default: scared,disgust,defensive=-35
+      pig:
+        perv: laughing,bidding,cheering,happy,Blood=70
+        emo: Blood,scared,disgust=-35
+        default: scared,disgust,defensive=-35
+    father,brother,sister,husband,wife,neighbour,neighbor,housemaid,maid,servant,mother:
+      perv: laughing,bidding,cheering,happy,Blood=200
+      emo: Blood,scared,disgust=70
+      default: scared,disgust,defensive=-120
+    myself: #SUICIDE???????????????????????????????????????????????
+      perv: laughing,bidding,cheering,happy,Blood=250
+      emo: Blood,scared,disgust=95
+      default: scared,disgust,defensive=-400
+  slap:
+    ass,butt:
+      horny,perv: hot,cheering,bidding,happy,cute=25
+      tech,intel,news,rel: defensive=-23
+      default: laughing=15
+    dick,pussy,vagina,clit,clitoris:
+      horny,perv: hot,cheering,bidding,happy,cute=50
+      tech,intel,news,rel: defensive,disgust,weird=-50
+      default: laughing,weird,disgust=-3
+    brother,mother,father,sister,maid,housemaid,neighbor,neighbour:
+      perv: hot,cheering,bidding,happy,cute=50
+      tech,intel,news,rel: defensive,weird=-50
+      default: laughing,sad,weird=-3
+    granfmother,grandfather:
+      perv: hot,cheering,bidding,happy,cute=50
+      tech,intel,news,rel: defensive,weird=-50
+      default: defensive,sad,weird=-3
+    myself:
+      horny,perv: hot,cheering,bidding,happy,cute=25
+      tech,intel,news,rel: defensive,weird=-23
+      default: laughing=15
+  whip:
+    ass,butt:
+      horny,perv: hot,cheering,bidding,happy,cute=25
+      tech,intel,news,rel: defensive=-23
+      default: laughing=15
+    dick,pussy,vagina,clit,clitoris:
+      horny,perv: hot,cheering,bidding,happy,cute=50
+      tech,intel,news,rel: defensive,disgust,weird=-50
+      default: laughing,weird,disgust=-3
+    brother,mother,father,sister,maid,housemaid,neighbor,neighbour:
+      perv: hot,cheering,bidding,happy,cute=50
+      tech,intel,news,rel: defensive,weird=-50
+      default: laughing,sad,weird=-3
+    granfmother,grandfather:
+      perv: hot,cheering,bidding,happy,cute=50
+      tech,intel,news,rel: defensive,weird=-50
+      default: defensive,sad,weird=-3
+    myself:
+      horny,perv: hot,cheering,bidding,happy,cute=25
+      tech,intel,news,rel: defensive,weird=-23
+      default: laughing=15
+  run:
+    undefined:
+      default: bored,laughing=-15
+    away: #FOLLOWRS DESCENDING UNTIL "RUN BACK" ??????????????????????
+      default: laughing,bored=-50
+    back:
+      default: happy=20
+    in:
+      circle:
+        horny,perv,int,rel,tech,news: bored,weird=-20
+        default: laughing=15
+    around:
+      horny,perv,int,rel,tech,news: bored,weird=-20
+      default: laughing=15
+    on:
+      place:
+        horny,perv,int,rel,tech,news: bored,weird=-20
+        default: laughing=25
+  go:
+    away: #FOLLOWRS DESCENDING UNTIL "RUN BACK" ??????????????????????
+      default: laughing,bored=-50
+    back:
+      default: happy=20
+    sleep:
+      stalk: happy,interested,admire=70
+      emo: sad=-20
+      lone: bored,sad=-200
+      default: bored,sad=-150
+  fart:
+    undefined:
+      perv: bidding,cheering,happy,hot=50
+      lone,game,bored: laughing=20
+      default: disgust=-30
+    in:
+      camera:
+        perv: bidding,cheering,happy,hot=60
+        lone,game,bored: laughing=35
+        default: disgust=-50
+    on:
+      camera:
+        perv: bidding,cheering,happy,hot=60
+        lone,game,bored: laughing=35
+        default: disgust=-50
+  spit:
+    undefined:
+      perv: happy,interested,cheering,bidding,hot=70
+      horny: interested,hot=15
+      rel,intel: disgust,weird,scared=-50
+      default: disgust,weird,laughing=-5
+    in:
+      mouth,hands,hand:
+        perv: happy,interested,cheering,bidding,hot=70
+        horny: interested,hot=15
+        rel,intel: disgust,weird,scared=-50
+        default: disgust,weird,laughing=-5
+      camera,keyboard:
+        perv: happy,interested,cheering,bidding,hot=80
+        rel,intel,tech: disgust,weird,scared=-50
+        default: disgust,weird,laughing=-10
+      own:
+        face,hands,hand,mouth:
+          perv: happy,interested,cheering,bidding,hot=80
+          rel,intel,tech: disgust,weird,scared=-50
+          default: disgust,weird,laughing=-10
+    on:
+      body,feet,feets,leg,legs,hand,hands:
+        perv: happy,interested,cheering,bidding,hot=70
+        horny: interested,hot=15
+        rel,intel: disgust,weird,scared=-50
+        default: disgust,weird,laughing=-5
+      camera,keyboard,screen:
 
 chat:
   reactions:
@@ -561,12 +696,20 @@ chat:
         - Swallow bitch! :*
         - Spread yourself with that gold, my Dear. :-)
       Blood:
-        - cut the whole arm off, you whore!
+        - cut it, you whore!
         - I'm bidding now like never. Please, continue, my Dear. :-)
-        - wanna see you choke with your blood
+        - wanna see you choke with that blood
         - try blood bubbles pls
         - BLOOOOOOOOOD yes, that's it, that's what I was looking for
         - OOOHHHH finally!!!
+    stalk:
+      interested:
+        - I'll be watching your
+        - I see what you do
+        - I've been observing you for a long time now
+      happy:
+        - Oh yes yes, i wanna see how you do this
+        - always wanted to know how other people do this, yuy :):)
     emo:
       Greeting:
         - The world is sad.
