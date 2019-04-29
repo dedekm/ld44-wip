@@ -5,6 +5,9 @@ three = require './three.coffee'
 
 config =
   type: Phaser.AUTO
+  title: 'chatrubateme'
+  url: 'https://ldjam.com/events/ludum-dare/44/chatrubateme'
+  version: '0.1'
   parent: 'phaser-wrapper'
   width: 512
   height: 256
