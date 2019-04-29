@@ -1,4 +1,5 @@
-express = require('express')
+express = require 'express'
+request = require 'request'
 yaml    = require 'js-yaml'
 fs      = require 'fs'
 
@@ -20,13 +21,25 @@ router.get '/', (req, res, next) ->
   return
 
 router.get '/data.json', (req, res, next) ->
-  config = yaml.safeLoad(fs.readFileSync('src/data/data.yml', 'utf8'))
-
-  processData(config)
-  indentedJson = JSON.stringify(config, null, 4)
-
   res.setHeader('Content-Type', 'application/json')
-  res.end(indentedJson)
+
+  # local
+  # config = yaml.safeLoad(fs.readFileSync('src/data/data.yml', 'utf8'))
+  # processData(config)
+  # json = JSON.stringify(config, null, 4)
+  # res.end(json)
+
+  # gist
+  dataUrl = 'https://gist.github.com/vdedek/508b4c86751f54785d740d4af81eac0f/raw'
+  request.get(dataUrl, (error, response, body) ->
+    if (!error && response.statusCode == 200)
+      config = yaml.safeLoad(body)
+      processData(config)
+      json = JSON.stringify(config, null, 4)
+      res.end(json)
+    else
+      res.end('{}')
+  )
 
 router.post '/input', (req, res, next) ->
   console.log ">> #{req.body.input}"
