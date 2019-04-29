@@ -4,7 +4,7 @@ class Money extends Object
 
     @scene = scene
     @total = 0
-    @counter = @scene.add.text(220, 20, '$0', @scene.default_text_options)
+    @counter = @scene.add.text(370, 20, '$0', @scene.default_text_options)
 
   add: (n) ->
     @total += n

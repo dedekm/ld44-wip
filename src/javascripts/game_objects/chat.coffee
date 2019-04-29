@@ -39,7 +39,7 @@ class Chat extends Object
     Phaser.Utils.Array.GetRandom(@groups)
 
   setViewersCounter: () ->
-    @viewersCounter ||= @scene.add.text(220, 0, '', @scene.default_text_options)
+    @viewersCounter ||= @scene.add.text(370, 0, '', @scene.default_text_options)
     total = 0
     for g in @groups
       total += g.count

@@ -8,11 +8,6 @@ config =
   parent: 'phaser-wrapper'
   width: 512
   height: 256
-  zoom: 2
-  pixelArt: true
-  # physics:
-  #   default: 'arcade'
-  preserveDrawingBuffer: true
   callbacks:
     postBoot: three.init
   scene:
