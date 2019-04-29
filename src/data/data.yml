@@ -639,10 +639,10 @@ actions:
       camera:
         perv,tech: happy,cheering,hot=20
         default: bored,weird=-10
-      zelda,computer,mario,snake,minesweeper,solitaire,hl2,tf2,counter,fortnite,sims:
-        game: happy,interested,bidding,cheering=70
-        rel,intel,tech,news: defensive=-25
-        def: bored=-10          
+    zelda,computer,mario,snake,minesweeper,solitaire,hl2,tf2,counter,fortnite,sims:
+      game: happy,interested,bidding,cheering=70
+      rel,intel,tech,news: defensive=-25
+      def: bored=-10          
 
 chat:
   reactions:
