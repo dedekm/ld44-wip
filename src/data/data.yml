@@ -1,15 +1,17 @@
 actions:
+  squat:
+    undefined:
+      horny: hot,cheering,admire=15
+      life: hot,cheering,admire=20
+      intel,tech,game: bored=-15
+      default: bored=-5
   do:
     striptease:
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
       rel,intel: disgust,defensive=-30
       news: bored=-10
       default: interested=15
-    squat:
-      horny: hot,cheering,admire=15
-      life: hot,cheering,admire=20
-      intel,tech,game: bored=-15
-      default: bored=-5
+    squat: squat
     pirouette,backflip:
       life: cheering,admire,interested=20
       horny: admire=8
@@ -474,7 +476,6 @@ actions:
       perv: bidding,cheering,happy,interested,hot=200
       news,stalk: scared=20
       default: scared=-100
-  
 
 chat:
   reactions:
