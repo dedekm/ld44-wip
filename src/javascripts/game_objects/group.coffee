@@ -9,6 +9,9 @@ class Group extends Object
     @satisfaction = 10
 
   react: (reaction) ->
+    if typeof reaction == 'object'
+      reaction = (reaction[@category] || reaction.default)
+
     [category, value] = reaction.split('=')
 
     if value

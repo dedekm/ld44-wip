@@ -28,10 +28,9 @@ class Chat extends Object
     @lines.push(text)
     @chatText.text = @lines.join("\n")
 
-  react: (category) ->
-    @lastCategory = category
+  react: (reaction) ->
     for group in @groups
-      group.react(category)
+      group.react(reaction)
 
   addGroup: (category) ->
     @groups.push(new Group(@scene, category, Phaser.Math.Between(5, 7)))
