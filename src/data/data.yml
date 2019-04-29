@@ -500,7 +500,7 @@ actions:
       tech,intel,news,rel: defensive=-23
       default: laughing=15
     dick,pussy,vagina,clit,clitoris:
-      horny,perv: hot,cheering,bidding,happy,cute=50
+      horny,perv: hot,cheering,bidding,happy=50
       tech,intel,news,rel: defensive,disgust,weird=-50
       default: laughing,weird,disgust=-3
     brother,mother,father,sister,maid,housemaid,neighbor,neighbour:
@@ -521,7 +521,7 @@ actions:
       tech,intel,news,rel: defensive=-23
       default: laughing=15
     dick,pussy,vagina,clit,clitoris:
-      horny,perv: hot,cheering,bidding,happy,cute=50
+      horny,perv: hot,cheering,bidding,happy=50
       tech,intel,news,rel: defensive,disgust,weird=-50
       default: laughing,weird,disgust=-3
     brother,mother,father,sister,maid,housemaid,neighbor,neighbour:
@@ -591,7 +591,7 @@ actions:
         horny: interested,hot=15
         rel,intel: disgust,weird,scared=-50
         default: disgust,weird,laughing=-5
-      camera,keyboard:
+      camera,keyboard,screen:
         perv: happy,interested,cheering,bidding,hot=80
         rel,intel,tech: disgust,weird,scared=-50
         default: disgust,weird,laughing=-10
@@ -601,12 +601,19 @@ actions:
           rel,intel,tech: disgust,weird,scared=-50
           default: disgust,weird,laughing=-10
     on:
-      body,feet,feets,leg,legs,hand,hands:
+      body,feet,feets,leg,legs,hand,hands,body:
         perv: happy,interested,cheering,bidding,hot=70
         horny: interested,hot=15
         rel,intel: disgust,weird,scared=-50
         default: disgust,weird,laughing=-5
       camera,keyboard,screen:
+        perv: happy,interested,cheering,bidding,hot=80
+        rel,intel,tech: disgust,weird,scared=-50
+        default: disgust,weird,laughing=-10
+      dick:
+        horny,perv: hot,cheering,bidding,happy=50
+        tech,intel,news,rel: defensive,disgust,weird=-50
+        default: laughing,weird,disgust=-8
 
 chat:
   reactions:
