@@ -37,7 +37,7 @@ findResponse = (str) ->
       if response
         return { value: response }
       else
-        return { error: "You can #{action} but not #{restOfSentence}..." }
+        return { error: "You can #{action} but not #{sentence[1]}..." }
   else if @itemsList.indexOf(action) != -1
     return { error: "What do you want to do with #{action}?" }
 
