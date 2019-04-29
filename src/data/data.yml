@@ -235,6 +235,7 @@ take:
         emo: Blood,scared=-30
         perv: admire,hot,interested,bidding,Blood=150 #dead after some time????????????????
         default: scared=-50
+  #commit test------------------------------------------------------------------
 
 chat:
   reactions:
