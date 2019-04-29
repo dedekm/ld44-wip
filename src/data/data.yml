@@ -256,6 +256,11 @@ actions:
       horny,news,life,perv: bored=-18
       tech,game: disgust=-15
       default: happy,admire,bored=10
+    religious:
+      song,melody:
+        horny,perv,intel,news: bored,defensive,disgust=-15
+        rel: happy,admire,cheering,bidding=170
+        default: laughing=10
     sad:
       song:
         emo,lone,intel,rel: sad,admire=30
@@ -406,7 +411,70 @@ actions:
       intel,rel: disgust,defensive,sad=-70
       tech,lone: cheering,bidding,happy,stalk=40
       default: defensive=-25
-    
+  say:
+    rude,dirty,naughty:
+      stuff,things,thing:
+        horny,perv: hot,cheering,bidding,happy=25
+        rel,intel: defensive=-50
+        default: laughing=15
+    racist:
+      stuff,things,thing:
+        intel,rel: disgust,defensive,sad=-70
+        tech,lone: cheering,bidding,happy,stalk=40
+        default: defensive=-25
+    sexy,erotic:
+      stuff,things,thing:
+        horny,perv: hot,cheering,bidding,happy=30
+        rel,intel: defensive=-70
+        default: laughing,interested=15
+    hello:
+      default: Greeting=5
+      world,stream,users,there:
+        default: Greeting=10
+    welcome:
+      default: Greeting=5
+      in:
+        world,stream,there:
+          default: Greeting=10
+  hello:
+    undefined:
+      default: Greeting=5
+    world,stream,users,there:
+      default: Greeting=10
+  whistle:
+    undefined:
+      horny,perv,intel,news: bored=-15
+      default: happy,laughing,admire=10
+    song:
+      horny,perv,intel,news: bored=-15
+      default: happy,laughing,admire=10
+    religious:
+      song,melody:
+        horny,perv,intel,news: bored,defensive,disgust=-15
+        rel: happy,admire,cheering,bidding=170
+        default: laughing=10
+    mario,zelda:
+      theme:
+        game: admire,happy,cheering,bidding=150
+        default: laughing,boring=5
+    sad:
+      song,melody:
+        emo: admire,sad,cheering,interested,cute,bidding=60
+        rel: admire,interested,sad=20
+        default: bored,sad,admire=10
+    into:
+      microphone:
+        default: scared,defensive=-25
+  hang:
+    on:
+      chandelier:
+        rel,intel,horny,perv: bored,defensive=-15
+        default: laughing=40
+    myslef:
+      perv: bidding,cheering,happy,interested,hot=200
+      news,stalk: scared=20
+      default: scared=-100
+  
 
 chat:
   reactions:
@@ -468,8 +536,18 @@ chat:
       cute:
         - cutiee :*
         - \( • ◡ • )/
+      Greeting:
+        - Hey
+        - Hey there
+        - Hello
+        - Hi
+        - What's up?
 
     perv:
+      Greeting:
+        - Oh hello, dear!
+        - Oh my Dear, I'm glad to see you again!
+        - Hello, I have a boner.
       cheering:
         - oh shit yes more more !!!!
       hot:
@@ -493,6 +571,12 @@ chat:
         - BLOOOOOOOOOD yes, that's it, that's what I was looking for
         - OOOHHHH finally!!!
     emo:
+      Greeting:
+        - The world is sad.
+        - emo hurts
+        - it hurts me
+        - Hello, sad too? (︶︹︺)
+        - (๑◕︵◕๑)
       Blood:
         - I was here for you but now I see you are just another freak, not real emo (⌣̩̩́_⌣̩̩̀)
         - I though you're like me, but no, you are not honest (⌣́_⌣̀)
@@ -509,8 +593,17 @@ chat:
       bored:
         - booooooooooo
     tech:
+      Greeting:
+        -
       weird:
         - ☉_☉
+    rel:
+      Greeting:
+        - The grace of our Lord Jesus Christ, the love of God, and the fellowship of the Holy Spirit be with you and also with you!
+        - Christ is risen!
+        - He is risen indeed. Alleluia!
+        - Bless you!
+        - Let's pray together
 
   viewers:
     groups:
