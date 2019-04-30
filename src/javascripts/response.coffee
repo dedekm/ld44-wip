@@ -1,6 +1,7 @@
 processInput = (string) ->
   splitChar = '{split}'
-  string.replace(/(?:(the|a|an) +)/g, '') # remove articles
+  string.replace(/(?:(the|a) +)/g, '') # remove articles
+        .replace(/( (my|from|about) +)/g, ' ') # remove specific words
         .replace(/^\s+|\s+$/g, '') # remove spaces at start / end
         .replace(/ +(?= )/g,'') # remove multiple spaces
         .replace(/\s+/, splitChar).split(splitChar) #split by first space
@@ -24,6 +25,7 @@ findNestedResponse = (words, data) ->
 
 findResponse = (str) ->
   sentence = processInput(str)
+  console.log sentence
 
   action = sentence[0]
   if @data.actions[action]
