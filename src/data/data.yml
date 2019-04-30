@@ -65,26 +65,26 @@ actions:
   shit:
     undefined:
       perv: happy,interested,cheering,bidding,hot=100
-      horny: interested, defensive=10
+      horny: interested,defensive=10
       bored: laughing=30
       rel,intel: disgust,weird,scared=-100
       default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
     and:
       piss:
         perv: happy,interested,cheering,bidding,hot=180
-        horny: interested, defensive,hot=30
+        horny: interested,defensive,hot=30
         rel,intel: disgust,weird,scared=-150
         default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
     on:
       keyboard:
         perv: happy,interested,cheering,bidding,hot=200
-        horny: interested, defensive,hot=30
+        horny: interested,defensive,hot=30
         game,tech: disgust,scared=-40
         rel,intel: disgust,weird,scared=-150
         default: disgust,weird,laughing=-15
       table,bed,floor,chair,wall:
         perv: happy,interested,cheering,bidding,hot=100
-        horny: interested, defensive=10
+        horny: interested,defensive=10
         bored: laughing=30
         rel,intel: disgust,weird,scared=-100
         default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
@@ -559,27 +559,23 @@ actions:
       place:
         horny,perv,int,rel,tech,news: bored,weird=-20
         default: laughing=25
+  sleep:
+    stalk: happy,interested,admire=70
+    emo: sad=-20
+    lone: bored,sad=-200
+    default: bored,sad=-150
   go:
     away: #FOLLOWRS DESCENDING UNTIL "RUN BACK" ??????????????????????
       default: laughing,bored=-50
     back:
       default: happy=20
-    sleep:
-      stalk: happy,interested,admire=70
-      emo: sad=-20
-      lone: bored,sad=-200
-      default: bored,sad=-150
+    sleep: sleep
   fart:
     undefined:
       perv: bidding,cheering,happy,hot=50
       lone,game,bored: laughing=20
       default: disgust=-30
-    in:
-      camera:
-        perv: bidding,cheering,happy,hot=60
-        lone,game,bored: laughing=35
-        default: disgust=-50
-    on:
+    in,on:
       camera:
         perv: bidding,cheering,happy,hot=60
         lone,game,bored: laughing=35
@@ -642,7 +638,7 @@ actions:
     zelda,computer,mario,snake,minesweeper,solitaire,hl2,tf2,counter,fortnite,sims:
       game: happy,interested,bidding,cheering=70
       rel,intel,tech,news: defensive=-25
-      def: bored=-10          
+      default: bored=-10
 
 chat:
   reactions:
@@ -806,6 +802,11 @@ chat:
       prefix:
         default:
           - cool
+          - x
+          -
+        erotic:
+          - '69'
+          - xxx
       base:
         default:
           - guy
@@ -813,16 +814,26 @@ chat:
           - cutie
           - king
           - queen
+          - monkey
+          - dog
+          - bob
         game:
           - gamer
           - samurai
+          - gunner
       suffix:
         default:
           - '@gmail.com'
           - '@yahoo.com'
-        game,perv:
+          - '( ͡°⊖ ͡°)'
+        erotic:
+          - '69'
+          - '8====D'
+        game:
           - 'killer'
       wrap:
         default:
           - '>>{name}<<'
           - '(((({name}))))'
+        gamer:
+          - '̿’̿’̿\̵͇̿̿\з=({name})=ε/̵͇̿̿/’̿’̿'
