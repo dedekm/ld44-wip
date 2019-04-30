@@ -23,6 +23,13 @@ initialize = ->
   scene.add(cuboid)
   cuboid.position.z = -410
 
+  geometry3 = new (THREE.SphereGeometry)(2)
+  material3 = new (THREE.MeshBasicMaterial)(color: 0x00ff00)
+  sphere = new (THREE.Mesh)(geometry3, material3)
+  scene.add(sphere)
+  sphere.position.y = 80
+  sphere.position.z = -405
+
   renderer = new (THREE.WebGLRenderer)(antialias: true)
   renderer.setPixelRatio window.devicePixelRatio
   renderer.setSize window.innerWidth, window.innerHeight
