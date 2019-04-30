@@ -15,9 +15,9 @@ class Chat extends Object
     @setViewersCounter()
 
     @scene.time.addEvent(
-      delay: 10 * 1000
+      delay: 5 * 1000
       callback: ->
-        @randomGroup().react('bored=-1')
+        @randomGroup().react('bored=-5')
       callbackScope: @,
       loop: true
     )
