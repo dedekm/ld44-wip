@@ -15,6 +15,9 @@ module.exports = ->
 
   Utils.postNewUser(@game.user)
 
+  @sound.add('noise')
+        .play(loop: true, volume: 0.8)
+
   @data = @cache.json.get('data')
   @itemsList = []
   for action, items of @data.actions

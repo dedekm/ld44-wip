@@ -8,3 +8,4 @@ module.exports = ->
   Keyboard.setUpKeyboard(@)
 
   @load.json('data', '/data.json')
+  @load.audio('noise', ['sounds/noise_pc.ogg', 'sounds/noise_pc.mp3'])
