@@ -560,10 +560,11 @@ actions:
         horny,perv,int,rel,tech,news: bored,weird=-20
         default: laughing=25
   sleep:
-    stalk: happy,interested,admire=70
-    emo: sad=-20
-    lone: bored,sad=-200
-    default: bored,sad=-150
+    undefined:
+      stalk: happy,interested,admire=70
+      emo: sad=-20
+      lone: bored,sad=-200
+      default: bored,sad=-150
   go:
     away: #FOLLOWRS DESCENDING UNTIL "RUN BACK" ??????????????????????
       default: laughing,bored=-50
