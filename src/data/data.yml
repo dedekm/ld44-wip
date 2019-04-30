@@ -1,20 +1,36 @@
 actions:
-  squat:
+  dance:
+    undefined:
+      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=20
+      rel,intel: disgust,defensive=-20
+      news: bored=-10
+      default: interested=5
+    samba,tango,latina:
+      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
+      rel,intel: disgust,defensive=-30
+      news: bored=-10
+      default: interested=15
+    ballet,classical:
+      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
+      rel,intel: interested=10
+      default: bored=-10
+  squat,push-up:
     horny: hot,cheering,admire=15
     life: hot,cheering,admire=20
     intel,tech,game: bored=-15
     default: bored=-5
+  push:
+    up: push-up
   do:
     striptease:
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
       rel,intel: disgust,defensive=-30
       news: bored=-10
       default: interested=15
-    squat:
-      horny: hot,cheering,admire=15
-      life: hot,cheering,admire=20
-      intel,tech,game: bored=-15
-      default: bored=-5
+    squat: squat
+    push-up: push-up
+    push:
+      up: push-up
     pirouette,backflip:
       life: cheering,admire,interested=20
       horny: admire=8
@@ -50,13 +66,7 @@ actions:
       game,tech,intel,news: bored=-15
       emo: happy=10
       default: bored=-5
-    off:
-      bed:
-        lone,bored,horny: laughing,cheering=5
-        game,tech,intel,news: bored=-15
-        emo: happy=10
-        default: bored=-5
-    on:
+    on,off:
       bed:
         lone,bored,horny: laughing,cheering=5
         game,tech,intel,news: bored=-15
@@ -93,8 +103,8 @@ actions:
       horny,perv: hot=40
       intel,news,rel: defensive=-40
       default: laughing,bored=3
-    myself:
-      #easteregg??????????????????????????????????????????
+    # myself:
+    #   easteregg??????????????????????????????????????????
   strip:
     undefined:
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
@@ -175,6 +185,10 @@ actions:
         bored: laughing=25
         tech,intel,news,rel: defensive=-18
         default: laughing,bored=0
+      water:
+        intel,news,rel,life: disgust,defensive=-20
+        bored: laughing=45
+        default: weird,defensive=-10
     blood:
       perv: hot,cheering,interested,Blood,bidding=100
       emo: Blood=-20
@@ -188,7 +202,7 @@ actions:
       tech,intel,news,rel,life,horny: disgust,defensive=-20
       perv: interested=15
       default: weird,laughing=10
-    poison,petrol,diluent,glue,acid,ink: #suicide????????????????????????????????????????
+    poison,petrol,diluent,glue,acid,ink: # suicide ???
       perv,stalk: interested,hot,bidding,admire=80
       lone: scared=-40
       default: scared,defensive=40
@@ -266,13 +280,13 @@ actions:
         horny,perv,intel,news: bored,defensive,disgust=-15
         rel: happy,admire,cheering,bidding=170
         default: laughing=10
-    sad:
-      song:
+    sad,unhappy:
+      song,melody:
         emo,lone,intel,rel: sad,admire=30
         horny,news,life,perv: bored=-18
         default: sad,admire=10
-    happy:
-      song:
+    happy,joyful:
+      song,melody:
         emo,lone,intel,rel: happy,admire=30
         horny,news,life,perv: bored=-18
         default: happy,admire=10
@@ -293,7 +307,7 @@ actions:
       rel,stalk,life: interested=20
       horny,perv,game,bored,emo: bored=-25
     bible:
-      rel: interested,admire,bidding,cheering,happy=200
+      rel: interested,admire,bidding,cheering,happy,Bible=200
       intel: interested,laughing=40
       perv: interested=15
       default: bored,laughing,sad=-25
@@ -773,8 +787,6 @@ chat:
       bored:
         - booooooooooo
     tech:
-      Greeting:
-        -
       weird:
         - ☉_☉
     rel:
@@ -784,6 +796,8 @@ chat:
         - He is risen indeed. Alleluia!
         - Bless you!
         - Let's pray together
+      Bible:
+        - My favourite book
 
   viewers:
     groups:
