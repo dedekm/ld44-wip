@@ -1,9 +1,20 @@
 Utils = require './utils.coffee'
 Response = require './response.coffee'
+Group = require './game_objects/group.coffee'
 Chat = require './game_objects/chat.coffee'
 Money = require './game_objects/money.coffee'
 
 module.exports = ->
+  name = prompt('Good day. Enter your chatrubateme username...', '')
+  if name == null or name == ''
+    name = 'anonymous'
+
+  @game.user =
+    id: new Date().getTime()
+    name: name
+
+  Utils.postNewUser(@game.user)
+
   @data = @cache.json.get('data')
   @itemsList = []
   for action, items of @data.actions
@@ -12,7 +23,6 @@ module.exports = ->
         unless i == 'undefined'
           @itemsList.push(i)
 
-  Utils.postNewUser()
   @postInput = Utils.postInput
   @money = new Money(@)
   @chat = new Chat(@)
@@ -24,7 +34,7 @@ module.exports = ->
   @findResponse = Response.findResponse
 
   @input = (value) ->
-    @postInput(value)
+    @postInput(@game.user, value)
 
     response = @findResponse(value)
     if response.value

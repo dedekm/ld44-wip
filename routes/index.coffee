@@ -50,16 +50,17 @@ writeToFile = (filename, str) ->
   status
 
 router.post '/user', (req, res, next) ->
-  str = "#{req.body.user}:\n"
+  console.log req.body
+  str = "#{req.body.id}_#{req.body.name}:\n"
   str += "  started_at: #{new Date().toJSON()}\n"
   str += "  ip: #{req.ip}\n"
   str += "  actions:\n"
-  status = writeToFile("data/#{req.body.user}.yml", str)
+  status = writeToFile("data/#{req.body.id}_#{req.body.name}.yml", str)
   res.sendStatus(status)
 
 router.post '/input', (req, res, next) ->
   str = "    - #{req.body.input} [#{new Date().toJSON()}]\n"
-  status = writeToFile("data/#{req.body.user}.yml", str)
+  status = writeToFile("data/#{req.body.id}_#{req.body.name}.yml", str)
   res.sendStatus(status)
 
 module.exports = router

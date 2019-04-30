@@ -4,11 +4,11 @@ post = (path, json) ->
   xhr.setRequestHeader 'Content-Type', 'application/json'
   xhr.send JSON.stringify(json)
 
-postNewUser = (name) ->
-  post('/user', user: 'test_name')
+postNewUser = (user) ->
+  post('/user', id: user.id, name: user.name)
 
-postInput = (input) ->
-  post('/input', user: 'test_name', input: input)
+postInput = (user, input) ->
+  post('/input', id: user.id, name: user.name, input: input)
 
 module.exports =
   postNewUser: postNewUser
