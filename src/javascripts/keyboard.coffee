@@ -7,7 +7,7 @@ setUpKeyboard = (scene) ->
         string = ''
         scene.game.three.updateText(input: '...')
       else
-        if e.code == 'Backspace'
+        if e.code == 'Backspace' && string != ''
           string = string.slice(0, -1)
         else if e.key.length == 1
           string += e.key

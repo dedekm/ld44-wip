@@ -72,6 +72,7 @@ createInputText = (font, material, str) ->
   inputMesh.position.z = -200
 
 updateText = (opts)->
+  opts.input = '...' if opts.input == ''
   if opts.hint
     scene.remove hintMesh
     createHintText(font, material, opts.hint)
