@@ -25,13 +25,12 @@ findNestedResponse = (words, data) ->
 
 findResponse = (str) ->
   sentence = processInput(str)
-  console.log sentence
 
   action = sentence[0]
   if @data.actions[action]
     if sentence.length == 1
-      if @data.actions[action].undefined
-        return { value: @data.actions[action].undefined }
+      if @data.actions[action].default
+        return { value: @data.actions[action] }
       else
         return { error: "What do you want to #{action}?" }
     else

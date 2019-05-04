@@ -1,451 +1,437 @@
 actions:
   dance:
-    undefined:
-      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=20
-      rel,intel: disgust,defensive=-20
-      news: bored=-10
-      default: interested=5
+    default: interested=5
+    horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=20
+    rel,intel: disgust,defensive=-20
+    news: bored=-10
+
     samba,tango,latina:
+      default: interested=15
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
       rel,intel: disgust,defensive=-30
       news: bored=-10
-      default: interested=15
     ballet,classical:
+      default: bored=-10
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
       rel,intel: interested=10
-      default: bored=-10
-  squat,push-up:
-    horny: hot,cheering,admire=15
-    life: hot,cheering,admire=20
-    intel,tech,game: bored=-15
-    default: bored=-5
-  push:
-    up: push-up
+
   do:
     striptease:
+      default: interested=15
       horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
       rel,intel: disgust,defensive=-30
       news: bored=-10
-      default: interested=15
     squat: squat
     push-up: push-up
     push:
       up: push-up
     pirouette,backflip:
+      default: cheering,admire,interested=20
       life: cheering,admire,interested=20
       horny: admire=8
-    forward:
+    forward,middle:
       split:
-        life,horny: cheering,admire,interested=20
         default: bored=-10
-    middle:
-      split:
         life,horny: cheering,admire,interested=20
-        default: bored=-10
     stupid:
       thing,things:
+        default: laughing,bored=1
         lone,bored: happy,laughing,cheering=20
         game: happy,laughing=5
         rel,news,life: defensive=-10
-        default: laughing,bored=1
     something:
       default: cheering=1
+  squat,push-up:
+    default: bored=-5
+    horny: hot,cheering,admire=15
+    life: hot,cheering,admire=20
+    intel,tech,game: bored=-15
+  push:
+    up: push-up
   make:
     funny:
       face:
+        default: laughing=3
         horny,rel,news,life,itel,tech: defensive,weird=-8
         lone,bored: laughing=15
-        default: laughing=3
     sad:
       face:
-        emo: sad=30
         default: sad,laughing=-3
+        emo: sad=30
   jump:
-    undefined:
-      lone,bored,horny: laughing,cheering=5
-      game,tech,intel,news: bored=-15
-      emo: happy=10
-      default: bored=-5
+    default: bored=-5
+    lone,bored,horny: laughing,cheering=5
+    game,tech,intel,news: bored=-15
+    emo: happy=10
+
     on,off:
       bed:
+        default: bored=-5
         lone,bored,horny: laughing,cheering=5
         game,tech,intel,news: bored=-15
         emo: happy=10
-        default: bored=-5
   shit:
-    undefined:
-      perv: happy,interested,cheering,bidding,hot=100
-      horny: interested,defensive=10
-      bored: laughing=30
-      rel,intel: disgust,weird,scared=-100
-      default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
-    and:
-      piss:
-        perv: happy,interested,cheering,bidding,hot=180
-        horny: interested,defensive,hot=30
-        rel,intel: disgust,weird,scared=-150
-        default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
+    default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
+    perv: happy,interested,cheering,bidding,hot=100
+    horny: interested,defensive=10
+    bored: laughing=30
+    rel,intel: disgust,weird,scared=-100
+
     on:
       keyboard:
+        default: disgust,weird,laughing=-15
         perv: happy,interested,cheering,bidding,hot=200
         horny: interested,defensive,hot=30
         game,tech: disgust,scared=-40
         rel,intel: disgust,weird,scared=-150
-        default: disgust,weird,laughing=-15
       table,bed,floor,chair,wall:
+        default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
         perv: happy,interested,cheering,bidding,hot=100
         horny: interested,defensive=10
         bored: laughing=30
         rel,intel: disgust,weird,scared=-100
-        default: disgust,weird,laughing=-15 #random rozmezí od minus do plusu
   be:
+    default: laughing,bored=3
     naughty,obscene:
-      horny,perv: hot=40
-      intel,news,rel: defensive=-40
-      default: laughing,bored=3
+    horny,perv: hot=40
+    intel,news,rel: defensive=-40
     # myself:
     #   easteregg??????????????????????????????????????????
   strip:
-    undefined:
-      horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
-      rel,intel: disgust,defensive=-30
-      news: bored=-10
-      default: interested=15
+    default: interested=15
+    horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=30
+    rel,intel: disgust,defensive=-30
+    news: bored=-10
   take:
     off:
       t-shirt,tshirt,trousers,skirt,tights,g-string,gstring:
+        default: interested=10
         horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=20
         rel,intel: disgust,defensive=-20
         news: bored=-10
-        default: interested=10
       coat,cap,hat,glasses,sunglasses,socks:
-        horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
         default: bored=10
+        horny,stalk,perv,lone,tech: hot,happy,bidding,cheering,admire=10
   get:
     naked:
+      default: interested=15
       horny,stalk,lone,tech: hot,happy,bidding,cheering,admire=50
       perv: bored=-20
       rel,intel: disgust,defensive=-30
       news: bored=-10
       emo: cute=15
-      default: interested=15
     naughty:
+      default: interested,laughing=15
       horny,stalk,lone,tech: hot,happy,bidding,cheering=50
       perv: happy,cheering=5
       rel: defensive,disgust=-20
-      default: interested,laughing=15
     under:
       table,chair:
         default: laughing=15
       bed:
+        default: laughing=15
         horny,perv: hot,cheering=15
         lone,emo,intel,news,rel: bored=-10
-        default: laughing=15
     on:
       table:
+        default: laughing=15
         horny,perv: hot,cheering=15
         lone,emo,intel,news,rel: bored=-10
-        default: laughing=15
   eat:
     apple,orange,pear:
-      horny,perv: bored=-10
       default: bored=-5
+      horny,perv: bored=-10
     cucumber,banana:
+      default: bored=-5
       horny,perv: hot,cheering=20
       rel: defensive=-10
-      default: bored=-5
     fist,hand:
+      default: laughing=15
       horny,perv: hot,cheering,bidding=40
       rel,news,life,tech: weird,disgust=-15
-      default: laughing=15
     pillow,sheet:
-      rel,news,life,tech: bored,defensive=-10
       default: weird,laughing=10
+      rel,news,life,tech: bored,defensive=-10
     camera:
-      perv: interested,cheering,admire=20
       default: weird,disgust=-5
+      perv: interested,cheering,admire=20
   drink:
     piss:
+      default: disgust
       perv: hot,bidding,admire,cheering=60
       horny: hot,cheering=25
-      default: disgust
     juice,water,soda:
       default: bored=-10
     milk:
-      perv,horny: hot,cheering,interested,Milk=30
       default: bored=-10
+      perv,horny: hot,cheering,interested,Milk=30
     honey,chocolate:
+      default: laughing,bored=0
       perv,horny: hot,cheering,interested,Honey,bidding=30
       bored: laughing=25
       tech,intel,news,rel: defensive=-18
-      default: laughing,bored=0
     hot:
       chocolate:
+        default: laughing,bored=0
         perv,horny: hot,cheering,interested=30
         bored: laughing=25
         tech,intel,news,rel: defensive=-18
-        default: laughing,bored=0
       water:
+        default: weird,defensive=-10
         intel,news,rel,life: disgust,defensive=-20
         bored: laughing=45
-        default: weird,defensive=-10
     blood:
+      default: weird,scared,disgust=-40
       perv: hot,cheering,interested,Blood,bidding=100
       emo: Blood=-20
       lone: scared=-40
-      default: weird,scared,disgust=-40
     toilet:
-      tech,intel,news,rel,life,horny: disgust,defensive=-20
-      perv: interested=15
       default: laughing=10
-    oil:
       tech,intel,news,rel,life,horny: disgust,defensive=-20
       perv: interested=15
+    oil:
       default: weird,laughing=10
+      tech,intel,news,rel,life,horny: disgust,defensive=-20
+      perv: interested=15
     poison,petrol,diluent,glue,acid,ink: # suicide ???
+      default: scared,defensive=40
       perv,stalk: interested,hot,bidding,admire=80
       lone: scared=-40
-      default: scared,defensive=40
   piss,urinate:
-    undefined:
-      horny,perv: hot,cheering,bidding=25
-      tech,intel,news,rel,life: disgust=-25
-      default: disgust=-15
+    default: disgust=-15
+    horny,perv: hot,cheering,bidding=25
+    tech,intel,news,rel,life: disgust=-25
+
     on:
       bed,table,sheets,pillow,floor,chair:
+        default: disgust=-15
         horny,perv: hot,cheering,bidding=25
         tech,intel,news,rel,life: disgust=-25
-        default: disgust=-15
       camera,keyboard:
+        default: disgust=-20
         perv: hot,cheering,bidding=40
         horny: weird=-15
         tech,intel,news,rel,life: disgust=-35
         game,bored: laughing=20
-        default: disgust=-20
     in:
       bed,glass:
+        default: disgust=-15
         horny,perv: hot,cheering,bidding=25
         tech,intel,news,rel,life: disgust=-25
-        default: disgust=-15
       mouth:
+        default: disgust=-20
         perv: hot,cheering,bidding,happy=80
         horny: hot,cheering=35
         tech,intel,news,rel,life: disgust=-50
         game,bored: laughing=25
-        default: disgust=-20
     and:
       shit:
+        default: disgust=-40
         perv: hot,cheering,bidding,happy=80
         horny: weird=-35
         tech,intel,news,rel,life: disgust=-50
         game,bored: laughing=25
-        default: disgust=-40
   cut:
     myself:
+      default: scared,disgust,weird=-25
       emo: admire,sad,bidding=50
       lone: scared=-50
       perv: admire,hot,interested,bidding,Blood=50
-      default: scared,disgust,weird=-25
     off:
       chandelier:
-        news,rel: bored,defensive=-10
         default: laughing=40
+        news,rel: bored,defensive=-10
       arm,hand,leg,finger:
+        default: scared=-50
         emo: Blood,scared=-30
         perv: admire,hot,interested,bidding,Blood=150 #dead after some time????????????????
-        default: scared=-50
-  jerk:
-    off:
-      horny: hot,bidding,cheering,admire=30
-      perv: bored=-15
-      default: disgust=-25
   masturbate:
-    undefined:
-      horny: hot,bidding,cheering,admire=30
-      perv: bored=-15
-      default: disgust=-25
+    default: disgust=-25
+    horny: hot,bidding,cheering,admire=30
+    perv: bored=-15
+  jerk:
+    off: masturbate
   sing:
-    undefined:
-      emo,lone,intel,rel: happy,admire=20
-      horny,news,life,perv: bored=-20
-      tech,game: disgust=-20
-      default: happy,admire,bored=10
+    default: happy,admire,bored=10
+    emo,lone,intel,rel: happy,admire=20
+    horny,news,life,perv: bored=-20
+    tech,game: disgust=-20
     song:
+      default: happy,admire,bored=10
       emo,lone,intel,rel: happy,admire=30
       horny,news,life,perv: bored=-18
       tech,game: disgust=-15
-      default: happy,admire,bored=10
     religious:
       song,melody:
+        default: laughing=10
         horny,perv,intel,news: bored,defensive,disgust=-15
         rel: happy,admire,cheering,bidding=170
-        default: laughing=10
     sad,unhappy:
       song,melody:
+        default: sad,admire=10
         emo,lone,intel,rel: sad,admire=30
         horny,news,life,perv: bored=-18
-        default: sad,admire=10
     happy,joyful:
       song,melody:
+        default: happy,admire=10
         emo,lone,intel,rel: happy,admire=30
         horny,news,life,perv: bored=-18
-        default: happy,admire=10
     and:
       dance:
+        default: happy,admire=10
         emo,lone,intel,rel: happy,laughing,admire=50
         horny,news,life,perv: bored=-5
         game,tech: laughing=10
-        default: happy,admire=10
     gently,quietly,nicely,softly,delicately:
+      default: interested,admire=10
       emo,lone,intel,rel: sad,interested,cute,admire=30
       horny,news,life,perv: bored=-18
-      default: interested,admire=10
   read:
     news,newspaper,press,journal:
+      default: bored=-25
       news: interested,happy=100
       intel: interested,happy=60
       rel,stalk,life: interested=20
-      horny,perv,game,bored,emo: bored=-25
     bible:
+      default: bored,laughing,sad=-25
       rel: interested,admire,bidding,cheering,happy,Bible=200
       intel: interested,laughing=40
       perv: interested=15
-      default: bored,laughing,sad=-25
     aloud:
+      default: bored=-40
       rel,stalk,life,news: interested=10
       intel: laughing=15
-      horny,perv,game,bored,emo: bored=-40
     science:
+      default: bored=-35
       life,news: bored=-10
       rel: defensive=-25
       intel: interested,happy,admire,bidding,cheering=15
       horny,perv,bored,emo: bored=-40
-      default: bored=-35
     book:
+      default: bored=-25
       life,news,rel,intel: interested=15
       horny,perv,bored,emo: bored=-40
-      default: bored=-25
     philosophy:
+      default: bored=-40
       intel: interested,happy,admire,bidding,cheering=150
       rel: interested,happy,admire=40
       horny,perv,bored,emo: bored=-100
-      default: bored=-40
   describe:
     family:
+      default: bored,laughing,weird=-20
       stalk: interested,happy,bidding,cheering=150
       emo: happy,interested,admire,cute=100
       rel,lone: happy,interested=30
       life: interested=15
       perv: interested=20
-      default: bored,laughing,weird=-20
       relations:
+        default: bored,laughing,weird=-10
         stalk: interested,happy,bidding,cheering=200
         emo: happy,interested,admire,cute=150
         rel,lone: happy,interested=50
         life: interested=25
         perv: interested=40
-        default: bored,laughing,weird=-10
     weather:
+      default: bored=-30
       stalk,news: happy,interested,bidding,cheering=80
       emo: sad,happy=20
       lone: sad=-35
       bored: bored=-60
-      default: bored=-30
     room,house,environment,surroundings,setting,place:
+      default: bored=-25
       stalk: happy,interested,bidding,cheering=80
       perv: interested=15
-      default: bored=-25
   talk:
-    undefined:
-      lone: happy,interested=40
-      default: bored=-25
+    default: bored=-25
+    lone: happy,interested=40
+
     weather:
+      default: bored=-30
       stalk,news: happy,interested,bidding,cheering=80
       emo: sad,happy=20
       lone: sad=-35
       bored: bored=-60
-      default: bored=-30
     family:
+      default: bored,laughing,weird=-20
       stalk: interested,happy,bidding,cheering=150
       emo: happy,interested,admire,cute=100
       rel,lone: happy,interested=30
       life: interested=15
       perv: interested=20
-      default: bored,laughing,weird=-20
       relations:
+        default: bored,laughing,weird=-10
         stalk: interested,happy,bidding,cheering=200
         emo: happy,interested,admire,cute=150
         rel,lone: happy,interested=50
         life: interested=25
         perv: interested=40
-        default: bored,laughing,weird=-10
     philosophy:
+      default: bored=-40
       intel: interested,happy,admire,bidding,cheering=150
       rel: interested,happy,admire=40
       horny,perv,bored,emo: bored=-100
-      default: bored=-40
     science:
+      default: bored=-35
       life,news: bored=-10
       rel: defensive=-25
       intel: interested,happy,admire,bidding,cheering=15
       horny,perv,bored,emo: bored=-40
-      default: bored=-35
     book:
+      default: bored=-25
       life,news,rel,intel: interested=15
       horny,perv,bored,emo: bored=-40
-      default: bored=-25
     news:
+      default: bored=-25
       news: interested,happy=100
       intel: interested,happy=60
       rel,stalk,life: interested=20
-      horny,perv,game,bored,emo: bored=-25
     aloud:
-      lone: happy,interested=40
       default: bored=-25
+      lone: happy,interested=40
     gently,quietly,nicely,softly,delicately:
-      emo,lone,intel,rel: sad,interested,cute,admire=30
-      horny,news,life,perv: bored=-18
       default: interested,admire=10
+      horny,news,life,perv: bored=-18
+      emo,lone,intel,rel: sad,interested,cute,admire=30
     money:
+      default: bored=-25
       news,intel,life: interested,cheering,admire=30
       rel,emo: defensive=-20
-      default: bored=-25
     sponsor: # ADD MONEY BUD TAKE FOLLOWERS AWAY
       default: bored=-50
     fast:
-      horny,tech,intel,news,rel,life: bored=-15
       default: laughing=15
+      horny,tech,intel,news,rel,life: bored=-15
     slow:
-      bored: bored=-70
       default: bored=-20
+      bored: bored=-70
     rude,dirty,harshly,rudely:
+      default: laughing=15
       horny,perv: hot,cheering,bidding,happy=25
       rel,intel: defensive=-50
-      default: laughing=15
     sexy,erotic:
+      default: laughing,interested=15
       horny,perv: hot,cheering,bidding,happy=30
       rel,intel: defensive=-70
-      default: laughing,interested=15
     racist,racialist:
+      default: defensive=-25
       intel,rel: disgust,defensive,sad=-70
       tech,lone: cheering,bidding,happy,stalk=40
-      default: defensive=-25
   say:
     rude,dirty,naughty:
       stuff,things,thing:
+        default: laughing=15
         horny,perv: hot,cheering,bidding,happy=25
         rel,intel: defensive=-50
-        default: laughing=15
     racist:
       stuff,things,thing:
+        default: defensive=-25
         intel,rel: disgust,defensive,sad=-70
         tech,lone: cheering,bidding,happy,stalk=40
-        default: defensive=-25
     sexy,erotic:
       stuff,things,thing:
+        default: laughing,interested=15
         horny,perv: hot,cheering,bidding,happy=30
         rel,intel: defensive=-70
-        default: laughing,interested=15
     hello:
       default: Greeting=5
       world,stream,users,there:
@@ -456,129 +442,126 @@ actions:
         world,stream,there:
           default: Greeting=10
   hello:
-    undefined:
-      default: Greeting=5
+    default: Greeting=5
     world,stream,users,there:
       default: Greeting=10
   whistle:
-    undefined:
-      horny,perv,intel,news: bored=-15
-      default: happy,laughing,admire=10
+    default: happy,laughing,admire=10
+    horny,perv,intel,news: bored=-15
+
     song:
-      horny,perv,intel,news: bored=-15
       default: happy,laughing,admire=10
+      horny,perv,intel,news: bored=-15
     religious:
       song,melody:
+        default: laughing=10
         horny,perv,intel,news: bored,defensive,disgust=-15
         rel: happy,admire,cheering,bidding=170
-        default: laughing=10
     mario,zelda:
       theme:
-        game: admire,happy,cheering,bidding=150
         default: laughing,boring=5
+        game: admire,happy,cheering,bidding=150
     sad:
       song,melody:
+        default: bored,sad,admire=10
         emo: admire,sad,cheering,interested,cute,bidding=60
         rel: admire,interested,sad=20
-        default: bored,sad,admire=10
     into:
       microphone:
         default: scared,defensive=-25
   hang:
     on:
       chandelier:
-        rel,intel,horny,perv: bored,defensive=-15
         default: laughing=40
+        rel,intel,horny,perv: bored,defensive=-15
     myself: #SUICIDE??????????????????????????????
+      default: scared=-100
       perv: bidding,cheering,happy,interested,hot=200
       news,stalk: scared=20
-      default: scared=-100
   kill:
     fly:
-      horny,intel,news,rel: bored=-10
       default: laughing=10
+      horny,intel,news,rel: bored=-10
     hamster,guinea,guinea-pig,fly:
+      default: scared,disgust,defensive=-35
       perv: laughing,bidding,cheering,happy,Blood=70
       emo: Blood,scared,disgust=-35
-      default: scared,disgust,defensive=-35
       pig:
+        default: scared,disgust,defensive=-35
         perv: laughing,bidding,cheering,happy,Blood=70
         emo: Blood,scared,disgust=-35
-        default: scared,disgust,defensive=-35
     father,brother,sister,husband,wife,neighbour,neighbor,housemaid,maid,servant,mother:
+      default: scared,disgust,defensive=-120
       perv: laughing,bidding,cheering,happy,Blood=200
       emo: Blood,scared,disgust=70
-      default: scared,disgust,defensive=-120
     myself: #SUICIDE???????????????????????????????????????????????
+      default: scared,disgust,defensive=-400
       perv: laughing,bidding,cheering,happy,Blood=250
       emo: Blood,scared,disgust=95
-      default: scared,disgust,defensive=-400
   slap:
     ass,butt:
+      default: laughing=15
       horny,perv: hot,cheering,bidding,happy,cute=25
       tech,intel,news,rel: defensive=-23
-      default: laughing=15
     dick,pussy,vagina,clit,clitoris:
+      default: laughing,weird,disgust=-3
       horny,perv: hot,cheering,bidding,happy=50
       tech,intel,news,rel: defensive,disgust,weird=-50
-      default: laughing,weird,disgust=-3
     brother,mother,father,sister,maid,housemaid,neighbor,neighbour:
-      perv: hot,cheering,bidding,happy,cute=50
-      tech,intel,news,rel: defensive,weird=-50
       default: laughing,sad,weird=-3
-    granfmother,grandfather:
       perv: hot,cheering,bidding,happy,cute=50
       tech,intel,news,rel: defensive,weird=-50
+    granfmother,grandfather:
       default: defensive,sad,weird=-3
+      perv: hot,cheering,bidding,happy,cute=50
+      tech,intel,news,rel: defensive,weird=-50
     myself:
+      default: laughing=15
       horny,perv: hot,cheering,bidding,happy,cute=25
       tech,intel,news,rel: defensive,weird=-23
-      default: laughing=15
   whip:
     ass,butt:
+      default: laughing=15
       horny,perv: hot,cheering,bidding,happy,cute=25
       tech,intel,news,rel: defensive=-23
-      default: laughing=15
     dick,pussy,vagina,clit,clitoris:
+      default: laughing,weird,disgust=-3
       horny,perv: hot,cheering,bidding,happy=50
       tech,intel,news,rel: defensive,disgust,weird=-50
-      default: laughing,weird,disgust=-3
     brother,mother,father,sister,maid,housemaid,neighbor,neighbour:
-      perv: hot,cheering,bidding,happy,cute=50
-      tech,intel,news,rel: defensive,weird=-50
       default: laughing,sad,weird=-3
-    granfmother,grandfather:
       perv: hot,cheering,bidding,happy,cute=50
       tech,intel,news,rel: defensive,weird=-50
+    granfmother,grandfather:
       default: defensive,sad,weird=-3
+      perv: hot,cheering,bidding,happy,cute=50
+      tech,intel,news,rel: defensive,weird=-50
     myself:
+      default: laughing=15
       horny,perv: hot,cheering,bidding,happy,cute=25
       tech,intel,news,rel: defensive,weird=-23
-      default: laughing=15
   run:
-    undefined:
-      default: bored,laughing=-15
+    default: bored,laughing=-15
     away: #FOLLOWRS DESCENDING UNTIL "RUN BACK" ??????????????????????
       default: laughing,bored=-50
     back:
       default: happy=20
     in:
       circle:
-        horny,perv,int,rel,tech,news: bored,weird=-20
         default: laughing=15
+        horny,perv,int,rel,tech,news: bored,weird=-20
     around:
-      horny,perv,int,rel,tech,news: bored,weird=-20
       default: laughing=15
+      horny,perv,int,rel,tech,news: bored,weird=-20
     on:
       place:
-        horny,perv,int,rel,tech,news: bored,weird=-20
         default: laughing=25
+        horny,perv,int,rel,tech,news: bored,weird=-20
   sleep:
-    undefined:
-      stalk: happy,interested,admire=70
-      emo: sad=-20
-      lone: bored,sad=-200
-      default: bored,sad=-150
+    default: bored,sad=-150
+    stalk: happy,interested,admire=70
+    emo: sad=-20
+    lone: bored,sad=-200
   go:
     away: #FOLLOWRS DESCENDING UNTIL "RUN BACK" ??????????????????????
       default: laughing,bored=-50
@@ -586,74 +569,74 @@ actions:
       default: happy=20
     sleep: sleep
   fart:
-    undefined:
-      perv: bidding,cheering,happy,hot=50
-      lone,game,bored: laughing=20
-      default: disgust=-30
+    default: disgust=-30
+    perv: bidding,cheering,happy,hot=50
+    lone,game,bored: laughing=20
+
     in,on:
       camera:
+        default: disgust=-50
         perv: bidding,cheering,happy,hot=60
         lone,game,bored: laughing=35
-        default: disgust=-50
   spit:
-    undefined:
-      perv: happy,interested,cheering,bidding,hot=70
-      horny: interested,hot=15
-      rel,intel: disgust,weird,scared=-50
-      default: disgust,weird,laughing=-5
+    default: disgust,weird,laughing=-5
+    perv: happy,interested,cheering,bidding,hot=70
+    horny: interested,hot=15
+    rel,intel: disgust,weird,scared=-50
+
     in:
       mouth,hands,hand:
+        default: disgust,weird,laughing=-5
         perv: happy,interested,cheering,bidding,hot=70
         horny: interested,hot=15
         rel,intel: disgust,weird,scared=-50
-        default: disgust,weird,laughing=-5
       camera,keyboard,screen:
+        default: disgust,weird,laughing=-10
         perv: happy,interested,cheering,bidding,hot=80
         rel,intel,tech: disgust,weird,scared=-50
-        default: disgust,weird,laughing=-10
       own:
         face,hands,hand,mouth:
+          default: disgust,weird,laughing=-10
           perv: happy,interested,cheering,bidding,hot=80
           rel,intel,tech: disgust,weird,scared=-50
-          default: disgust,weird,laughing=-10
     on:
       body,feet,feets,leg,legs,hand,hands,body:
+        default: disgust,weird,laughing=-5
         perv: happy,interested,cheering,bidding,hot=70
         horny: interested,hot=15
         rel,intel: disgust,weird,scared=-50
-        default: disgust,weird,laughing=-5
       camera,keyboard,screen:
+        default: disgust,weird,laughing=-10
         perv: happy,interested,cheering,bidding,hot=80
         rel,intel,tech: disgust,weird,scared=-50
-        default: disgust,weird,laughing=-10
       dick:
+        default: laughing,weird,disgust=-8
         horny,perv: hot,cheering,bidding,happy=50
         tech,intel,news,rel: defensive,disgust,weird=-50
-        default: laughing,weird,disgust=-8
   play:
     chess:
+      default: bored=-15
       gamer: happy,interested,bored=15
       intel: interested,admire=25
       rel: admire=10
-      default: bored=-15
     with:
       penis,dick,vagina,pussy,clitoris,clit,bottle,pencil,banana,cucumber,fingers,finger:
+        default: laughing,disgust,defensive,weird=-30
         perv,horny: admire,happy,cheering,hot,bidding=30
         rel,intel,tech,news,life: disgust,defensive,weird=-30
-        default: laughing,disgust,defensive,weird=-30
       dog,cat,turtle,mouse:
-        emo,lone: happy,laughing=25
         default: bored=-10
+        emo,lone: happy,laughing=25
       brother,mother,father,grandfather,granfmother:
-        rel: admire,happy=30
         default: weird,laughing,bored=-15
+        rel: admire,happy=30
       camera:
-        perv,tech: happy,cheering,hot=20
         default: bored,weird=-10
+        perv,tech: happy,cheering,hot=20
     zelda,computer,mario,snake,minesweeper,solitaire,hl2,tf2,counter,fortnite,sims:
+      default: bored=-10
       game: happy,interested,bidding,cheering=70
       rel,intel,tech,news: defensive=-25
-      default: bored=-10
 
 chat:
   reactions:
