@@ -8,6 +8,7 @@ font = undefined
 textMaterial = undefined
 hintMesh = undefined
 inputMesh = undefined
+object = undefined
 
 initialize = ->
   camera = new (THREE.PerspectiveCamera)(50, window.innerWidth / window.innerHeight, 1, 2000)
@@ -15,13 +16,37 @@ initialize = ->
   material = new (THREE.MeshBasicMaterial)
   plane = new (THREE.Mesh)(new (THREE.PlaneBufferGeometry)(300, 150), material)
   scene.add(plane)
-  plane.position.z = -400
+  plane.scale.x = 0.7
+  plane.scale.y = 0.8
+  plane.scale.z = 0.78
+  plane.rotation.x = -0.4
+  plane.position.x = -1
+  plane.position.y = -64
+  plane.position.z = -327
 
-  geometry2 = new (THREE.BoxGeometry)(320, 170, 10)
-  material2 = new (THREE.MeshBasicMaterial)(color: 0x121212)
-  cuboid = new (THREE.Mesh)(geometry2, material2)
-  scene.add(cuboid)
-  cuboid.position.z = -410
+  ambientLight = new (THREE.AmbientLight)(0xcccccc, 0.3)
+  scene.add ambientLight
+  pointLight = new (THREE.PointLight)(0xffffff, 0.7)
+  scene.add pointLight
+
+  onProgress = (xhr) ->
+    if xhr.lengthComputable
+      percentComplete = xhr.loaded / xhr.total * 100
+      console.log Math.round(percentComplete, 2) + '% downloaded'
+
+  onError = ->
+    console.log 'import error'
+
+  THREE.Loader.Handlers.add /\.dds$/i, new (THREE.DDSLoader)
+  (new (THREE.MTLLoader)).setPath('models/').load 'table.mtl', (materials) ->
+    materials.preload()
+    (new (THREE.OBJLoader)).setMaterials(materials).setPath('models/').load 'table.obj', ((object) ->
+      object.position.x = 20
+      object.position.y = -100
+      object.position.z = -350
+      object.scale.x = object.scale.y = object.scale.z = 1.9
+      scene.add object
+    ), onProgress, onError
 
   geometry3 = new (THREE.SphereGeometry)(2)
   material3 = new (THREE.MeshBasicMaterial)(color: 0x00ff00)
@@ -62,8 +87,8 @@ createHintText = (font, material, str) ->
   scene.add(hintMesh)
   hintMesh.geometry.center()
   hintMesh.position.x = 0
-  hintMesh.position.y = -25
-  hintMesh.position.z = -200
+  hintMesh.position.y = 40
+  hintMesh.position.z = -220
 
 createInputText = (font, material, str) ->
   inputGeo = new (THREE.TextGeometry)(str || '...',
@@ -75,7 +100,7 @@ createInputText = (font, material, str) ->
   scene.add(inputMesh)
   inputMesh.geometry.center()
   inputMesh.position.x = 0
-  inputMesh.position.y = -40
+  inputMesh.position.y = 15
   inputMesh.position.z = -200
 
 updateText = (opts)->
@@ -103,15 +128,15 @@ onWindowResize = ->
 animate = ->
   requestAnimationFrame animate
 
-  if camera.rotation.x < -0.7
-    camera.rotation.x = -0.7
-  else if camera.rotation.x > 0.7
-    camera.rotation.x = 0.7
+  if camera.rotation.x < -0.8
+    camera.rotation.x = -0.8
+  else if camera.rotation.x > 0.8
+    camera.rotation.x = 0.8
 
-  if camera.rotation.y < -0.5
-    camera.rotation.y = -0.5
-  else if camera.rotation.y > 0.5
-    camera.rotation.y = 0.5
+  if camera.rotation.y < -0.6
+    camera.rotation.y = -0.6
+  else if camera.rotation.y > 0.6
+    camera.rotation.y = 0.6
 
   camera.rotation.z = 0
 
